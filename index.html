@@ -1,1151 +1,2414 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>TriNova AI Labs — Strategic Intelligence. Transformative Results.</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet"/>
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>
+            TriNova AI Labs — Strategic Intelligence. Transformative Results.
+        </title>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap"
+            rel="stylesheet"
+        />
+        <style>
+            *,
+            *::before,
+            *::after {
+                box-sizing: border-box;
+                margin: 0;
+                padding: 0;
+            }
 
-    :root {
-      --navy:   #0D1B2A;
-      --teal:   #0A8A7A;
-      --teal-light: #0DB39E;
-      --accent: #05D2C0;
-      --silver: #F4F6F9;
-      --mid:    #8494A7;
-      --white:  #FFFFFF;
-      --text:   #1A2B3C;
-      --border: #E2E8F0;
-    }
+            :root {
+                --navy: #0d1b2a;
+                --teal: #0a8a7a;
+                --teal-light: #0db39e;
+                --accent: #05d2c0;
+                --silver: #f4f6f9;
+                --mid: #8494a7;
+                --white: #ffffff;
+                --text: #1a2b3c;
+                --border: #e2e8f0;
+            }
 
-    html { scroll-behavior: smooth; }
+            html {
+                scroll-behavior: smooth;
+            }
 
-    body {
-      font-family: 'Inter', sans-serif;
-      color: var(--text);
-      background: var(--white);
-      line-height: 1.6;
-    }
+            body {
+                font-family: "Inter", sans-serif;
+                color: var(--text);
+                background: var(--white);
+                line-height: 1.6;
+            }
 
-    /* ── NAV ── */
-    nav {
-      position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;
-      background: rgba(255,255,255,0.96);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border);
-      padding: 0 5%;
-      display: flex; align-items: center; justify-content: space-between;
-      height: 70px;
-    }
-    .nav-logo {
-      display: flex; align-items: center; gap: 10px;
-      text-decoration: none;
-    }
-    .nav-logo-mark {
-      width: 36px; height: 36px;
-      background: linear-gradient(135deg, var(--teal), var(--accent));
-      border-radius: 8px;
-      display: flex; align-items: center; justify-content: center;
-      font-weight: 800; color: #fff; font-size: 14px; letter-spacing: -0.5px;
-    }
-    .nav-logo-text {
-      font-weight: 700; font-size: 17px; color: var(--navy); letter-spacing: -0.3px;
-    }
-    .nav-logo-text span { color: var(--teal); }
-    .nav-links { display: flex; gap: 36px; list-style: none; }
-    .nav-links a {
-      text-decoration: none; font-size: 14px; font-weight: 500;
-      color: var(--mid); transition: color .2s;
-    }
-    .nav-links a:hover, .nav-links a.active { color: var(--teal); }
-    .nav-cta {
-      background: var(--teal); color: #fff;
-      padding: 9px 22px; border-radius: 6px;
-      text-decoration: none; font-size: 14px; font-weight: 600;
-      transition: background .2s, transform .15s;
-    }
-    .nav-cta:hover { background: var(--teal-light); transform: translateY(-1px); }
+            /* ── NAV ── */
+            nav {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                z-index: 1000;
+                background: rgba(255, 255, 255, 0.96);
+                backdrop-filter: blur(12px);
+                border-bottom: 1px solid var(--border);
+                padding: 0 5%;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                height: 70px;
+            }
+            .nav-logo {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                text-decoration: none;
+            }
+            .nav-logo-mark {
+                width: 36px;
+                height: 36px;
+                background: linear-gradient(135deg, var(--teal), var(--accent));
+                border-radius: 8px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-weight: 800;
+                color: #fff;
+                font-size: 14px;
+                letter-spacing: -0.5px;
+            }
+            .nav-logo-text {
+                font-weight: 700;
+                font-size: 17px;
+                color: var(--navy);
+                letter-spacing: -0.3px;
+            }
+            .nav-logo-text span {
+                color: var(--teal);
+            }
+            .nav-links {
+                display: flex;
+                gap: 36px;
+                list-style: none;
+            }
+            .nav-links a {
+                text-decoration: none;
+                font-size: 14px;
+                font-weight: 500;
+                color: var(--mid);
+                transition: color 0.2s;
+            }
+            .nav-links a:hover,
+            .nav-links a.active {
+                color: var(--teal);
+            }
+            .nav-cta {
+                background: var(--teal);
+                color: #fff;
+                padding: 9px 22px;
+                border-radius: 6px;
+                text-decoration: none;
+                font-size: 14px;
+                font-weight: 600;
+                transition:
+                    background 0.2s,
+                    transform 0.15s;
+            }
+            .nav-cta:hover {
+                background: var(--teal-light);
+                transform: translateY(-1px);
+            }
 
-    /* ── PAGES ── */
-    .page { display: none; padding-top: 70px; }
-    .page.active { display: block; }
+            /* ── PAGES ── */
+            .page {
+                display: none;
+                padding-top: 70px;
+            }
+            .page.active {
+                display: block;
+            }
 
-    /* ── HERO ── */
-    .hero {
-      min-height: calc(100vh - 70px);
-      background: linear-gradient(160deg, var(--navy) 0%, #122840 55%, #0D3350 100%);
-      display: flex; align-items: center;
-      padding: 80px 8% 80px;
-      position: relative; overflow: hidden;
-    }
-    .hero::before {
-      content: '';
-      position: absolute; top: -200px; right: -200px;
-      width: 600px; height: 600px;
-      background: radial-gradient(circle, rgba(10,138,122,0.18) 0%, transparent 70%);
-      border-radius: 50%;
-    }
-    .hero::after {
-      content: '';
-      position: absolute; bottom: -100px; left: 20%;
-      width: 400px; height: 400px;
-      background: radial-gradient(circle, rgba(5,210,192,0.08) 0%, transparent 70%);
-      border-radius: 50%;
-    }
-    .hero-inner { max-width: 780px; position: relative; z-index: 1; }
-    .hero-eyebrow {
-      display: inline-flex; align-items: center; gap: 8px;
-      background: rgba(10,138,122,0.2);
-      border: 1px solid rgba(10,138,122,0.4);
-      border-radius: 20px; padding: 6px 16px;
-      font-size: 12px; font-weight: 600; letter-spacing: 1.2px;
-      text-transform: uppercase; color: var(--accent);
-      margin-bottom: 28px;
-    }
-    .hero-eyebrow::before {
-      content: ''; width: 6px; height: 6px;
-      background: var(--accent); border-radius: 50%;
-      animation: pulse 2s infinite;
-    }
-    @keyframes pulse {
-      0%,100% { opacity:1; transform:scale(1); }
-      50% { opacity:.5; transform:scale(1.4); }
-    }
-    .hero h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(2.4rem, 5vw, 3.8rem);
-      font-weight: 700; color: #fff;
-      line-height: 1.15; letter-spacing: -0.5px;
-      margin-bottom: 24px;
-    }
-    .hero h1 em { font-style: normal; color: var(--accent); }
-    .hero-sub {
-      font-size: 1.1rem; color: rgba(255,255,255,0.72);
-      max-width: 600px; margin-bottom: 44px; font-weight: 300;
-      line-height: 1.75;
-    }
-    .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
-    .btn-primary {
-      background: var(--teal); color: #fff;
-      padding: 14px 32px; border-radius: 7px;
-      font-size: 15px; font-weight: 600; text-decoration: none;
-      transition: background .2s, transform .15s, box-shadow .2s;
-      box-shadow: 0 4px 24px rgba(10,138,122,0.35);
-    }
-    .btn-primary:hover { background: var(--teal-light); transform: translateY(-2px); box-shadow: 0 8px 30px rgba(10,138,122,0.45); }
-    .btn-ghost {
-      background: transparent; color: rgba(255,255,255,0.85);
-      padding: 14px 32px; border-radius: 7px;
-      font-size: 15px; font-weight: 500; text-decoration: none;
-      border: 1px solid rgba(255,255,255,0.25);
-      transition: border-color .2s, color .2s, background .2s;
-    }
-    .btn-ghost:hover { border-color: var(--accent); color: var(--accent); background: rgba(5,210,192,0.05); }
+            /* ── HERO ── */
+            .hero {
+                min-height: calc(100vh - 70px);
+                background: linear-gradient(
+                    160deg,
+                    var(--navy) 0%,
+                    #122840 55%,
+                    #0d3350 100%
+                );
+                display: flex;
+                align-items: center;
+                padding: 80px 8% 80px;
+                position: relative;
+                overflow: hidden;
+            }
+            .hero::before {
+                content: "";
+                position: absolute;
+                top: -200px;
+                right: -200px;
+                width: 600px;
+                height: 600px;
+                background: radial-gradient(
+                    circle,
+                    rgba(10, 138, 122, 0.18) 0%,
+                    transparent 70%
+                );
+                border-radius: 50%;
+            }
+            .hero::after {
+                content: "";
+                position: absolute;
+                bottom: -100px;
+                left: 20%;
+                width: 400px;
+                height: 400px;
+                background: radial-gradient(
+                    circle,
+                    rgba(5, 210, 192, 0.08) 0%,
+                    transparent 70%
+                );
+                border-radius: 50%;
+            }
+            .hero-inner {
+                max-width: 780px;
+                position: relative;
+                z-index: 1;
+            }
+            .hero-eyebrow {
+                display: inline-flex;
+                align-items: center;
+                gap: 8px;
+                background: rgba(10, 138, 122, 0.2);
+                border: 1px solid rgba(10, 138, 122, 0.4);
+                border-radius: 20px;
+                padding: 6px 16px;
+                font-size: 12px;
+                font-weight: 600;
+                letter-spacing: 1.2px;
+                text-transform: uppercase;
+                color: var(--accent);
+                margin-bottom: 28px;
+            }
+            .hero-eyebrow::before {
+                content: "";
+                width: 6px;
+                height: 6px;
+                background: var(--accent);
+                border-radius: 50%;
+                animation: pulse 2s infinite;
+            }
+            @keyframes pulse {
+                0%,
+                100% {
+                    opacity: 1;
+                    transform: scale(1);
+                }
+                50% {
+                    opacity: 0.5;
+                    transform: scale(1.4);
+                }
+            }
+            .hero h1 {
+                font-family: "Playfair Display", serif;
+                font-size: clamp(2.4rem, 5vw, 3.8rem);
+                font-weight: 700;
+                color: #fff;
+                line-height: 1.15;
+                letter-spacing: -0.5px;
+                margin-bottom: 24px;
+            }
+            .hero h1 em {
+                font-style: normal;
+                color: var(--accent);
+            }
+            .hero-sub {
+                font-size: 1.1rem;
+                color: rgba(255, 255, 255, 0.72);
+                max-width: 600px;
+                margin-bottom: 44px;
+                font-weight: 300;
+                line-height: 1.75;
+            }
+            .hero-actions {
+                display: flex;
+                gap: 16px;
+                flex-wrap: wrap;
+            }
+            .btn-primary {
+                background: var(--teal);
+                color: #fff;
+                padding: 14px 32px;
+                border-radius: 7px;
+                font-size: 15px;
+                font-weight: 600;
+                text-decoration: none;
+                transition:
+                    background 0.2s,
+                    transform 0.15s,
+                    box-shadow 0.2s;
+                box-shadow: 0 4px 24px rgba(10, 138, 122, 0.35);
+            }
+            .btn-primary:hover {
+                background: var(--teal-light);
+                transform: translateY(-2px);
+                box-shadow: 0 8px 30px rgba(10, 138, 122, 0.45);
+            }
+            .btn-ghost {
+                background: transparent;
+                color: rgba(255, 255, 255, 0.85);
+                padding: 14px 32px;
+                border-radius: 7px;
+                font-size: 15px;
+                font-weight: 500;
+                text-decoration: none;
+                border: 1px solid rgba(255, 255, 255, 0.25);
+                transition:
+                    border-color 0.2s,
+                    color 0.2s,
+                    background 0.2s;
+            }
+            .btn-ghost:hover {
+                border-color: var(--accent);
+                color: var(--accent);
+                background: rgba(5, 210, 192, 0.05);
+            }
 
-    /* hero pillars */
-    .hero-pillars {
-      margin-top: 64px;
-      display: grid; grid-template-columns: repeat(3,1fr); gap: 20px;
-    }
-    .hero-pill {
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: 10px; padding: 20px 20px 18px;
-      transition: background .2s, border-color .2s;
-    }
-    .hero-pill:hover { background: rgba(10,138,122,0.12); border-color: rgba(10,138,122,0.4); }
-    .hero-pill-icon { font-size: 22px; margin-bottom: 10px; }
-    .hero-pill-title { font-size: 13px; font-weight: 600; color: rgba(255,255,255,0.9); margin-bottom: 5px; }
-    .hero-pill-text { font-size: 12px; color: rgba(255,255,255,0.5); line-height: 1.5; }
+            /* hero pillars */
+            .hero-pillars {
+                margin-top: 64px;
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 20px;
+            }
+            .hero-pill {
+                background: rgba(255, 255, 255, 0.05);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                border-radius: 10px;
+                padding: 20px 20px 18px;
+                transition:
+                    background 0.2s,
+                    border-color 0.2s;
+            }
+            .hero-pill:hover {
+                background: rgba(10, 138, 122, 0.12);
+                border-color: rgba(10, 138, 122, 0.4);
+            }
+            .hero-pill-icon {
+                font-size: 22px;
+                margin-bottom: 10px;
+            }
+            .hero-pill-title {
+                font-size: 13px;
+                font-weight: 600;
+                color: rgba(255, 255, 255, 0.9);
+                margin-bottom: 5px;
+            }
+            .hero-pill-text {
+                font-size: 12px;
+                color: rgba(255, 255, 255, 0.5);
+                line-height: 1.5;
+            }
 
-    /* ── SECTION COMMONS ── */
-    section { padding: 90px 8%; }
-    .section-eyebrow {
-      font-size: 11px; font-weight: 700; letter-spacing: 1.5px;
-      text-transform: uppercase; color: var(--teal);
-      margin-bottom: 12px;
-    }
-    .section-title {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(1.9rem, 3.5vw, 2.7rem);
-      font-weight: 700; color: var(--navy);
-      line-height: 1.2; letter-spacing: -0.3px;
-      margin-bottom: 18px;
-    }
-    .section-sub {
-      font-size: 1.05rem; color: var(--mid);
-      max-width: 600px; line-height: 1.75;
-      margin-bottom: 56px;
-    }
-    .divider {
-      width: 48px; height: 3px;
-      background: linear-gradient(90deg, var(--teal), var(--accent));
-      border-radius: 2px; margin-bottom: 20px;
-    }
+            /* ── SECTION COMMONS ── */
+            section {
+                padding: 90px 8%;
+            }
+            .section-eyebrow {
+                font-size: 11px;
+                font-weight: 700;
+                letter-spacing: 1.5px;
+                text-transform: uppercase;
+                color: var(--teal);
+                margin-bottom: 12px;
+            }
+            .section-title {
+                font-family: "Playfair Display", serif;
+                font-size: clamp(1.9rem, 3.5vw, 2.7rem);
+                font-weight: 700;
+                color: var(--navy);
+                line-height: 1.2;
+                letter-spacing: -0.3px;
+                margin-bottom: 18px;
+            }
+            .section-sub {
+                font-size: 1.05rem;
+                color: var(--mid);
+                max-width: 600px;
+                line-height: 1.75;
+                margin-bottom: 56px;
+            }
+            .divider {
+                width: 48px;
+                height: 3px;
+                background: linear-gradient(90deg, var(--teal), var(--accent));
+                border-radius: 2px;
+                margin-bottom: 20px;
+            }
 
-    /* ── HOME: STATS ── */
-    .stats-band {
-      background: var(--navy);
-      padding: 50px 8%;
-      display: grid; grid-template-columns: repeat(4,1fr); gap: 10px;
-    }
-    .stat { text-align: center; padding: 10px; }
-    .stat-num {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.6rem; font-weight: 700;
-      color: var(--accent); line-height: 1;
-    }
-    .stat-label { font-size: 13px; color: rgba(255,255,255,0.55); margin-top: 6px; font-weight: 400; }
+            /* ── HOME: STATS ── */
+            .stats-band {
+                background: var(--navy);
+                padding: 50px 8%;
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                gap: 10px;
+            }
+            .stat {
+                text-align: center;
+                padding: 10px;
+            }
+            .stat-num {
+                font-family: "Playfair Display", serif;
+                font-size: 2.6rem;
+                font-weight: 700;
+                color: var(--accent);
+                line-height: 1;
+            }
+            .stat-label {
+                font-size: 13px;
+                color: rgba(255, 255, 255, 0.55);
+                margin-top: 6px;
+                font-weight: 400;
+            }
 
-    /* ── HOME: VALUE OVERVIEW ── */
-    .value-grid {
-      display: grid; grid-template-columns: repeat(3,1fr); gap: 28px;
-    }
-    .value-card {
-      background: var(--silver);
-      border: 1px solid var(--border);
-      border-radius: 14px; padding: 36px 30px;
-      transition: transform .25s, box-shadow .25s, border-color .25s;
-      position: relative; overflow: hidden;
-    }
-    .value-card::after {
-      content: '';
-      position: absolute; top: 0; left: 0;
-      width: 100%; height: 3px;
-      background: linear-gradient(90deg, var(--teal), var(--accent));
-      opacity: 0; transition: opacity .25s;
-    }
-    .value-card:hover { transform: translateY(-5px); box-shadow: 0 16px 48px rgba(13,27,42,0.1); border-color: transparent; }
-    .value-card:hover::after { opacity: 1; }
-    .value-card-num {
-      font-size: 11px; font-weight: 700; letter-spacing: 1.5px;
-      text-transform: uppercase; color: var(--teal);
-      margin-bottom: 18px;
-    }
-    .value-card-icon {
-      width: 52px; height: 52px;
-      background: linear-gradient(135deg, rgba(10,138,122,0.12), rgba(5,210,192,0.08));
-      border-radius: 12px;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 22px; margin-bottom: 20px;
-    }
-    .value-card h3 {
-      font-size: 1.15rem; font-weight: 700; color: var(--navy);
-      margin-bottom: 12px; line-height: 1.3;
-    }
-    .value-card p { font-size: 14px; color: var(--mid); line-height: 1.7; }
-    .value-card-link {
-      display: inline-flex; align-items: center; gap: 6px;
-      margin-top: 20px; font-size: 13px; font-weight: 600;
-      color: var(--teal); text-decoration: none;
-      transition: gap .2s;
-    }
-    .value-card-link:hover { gap: 10px; }
+            /* ── HOME: VALUE OVERVIEW ── */
+            .value-grid {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 28px;
+            }
+            .value-card {
+                background: var(--silver);
+                border: 1px solid var(--border);
+                border-radius: 14px;
+                padding: 36px 30px;
+                transition:
+                    transform 0.25s,
+                    box-shadow 0.25s,
+                    border-color 0.25s;
+                position: relative;
+                overflow: hidden;
+            }
+            .value-card::after {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 3px;
+                background: linear-gradient(90deg, var(--teal), var(--accent));
+                opacity: 0;
+                transition: opacity 0.25s;
+            }
+            .value-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 16px 48px rgba(13, 27, 42, 0.1);
+                border-color: transparent;
+            }
+            .value-card:hover::after {
+                opacity: 1;
+            }
+            .value-card-num {
+                font-size: 11px;
+                font-weight: 700;
+                letter-spacing: 1.5px;
+                text-transform: uppercase;
+                color: var(--teal);
+                margin-bottom: 18px;
+            }
+            .value-card-icon {
+                width: 52px;
+                height: 52px;
+                background: linear-gradient(
+                    135deg,
+                    rgba(10, 138, 122, 0.12),
+                    rgba(5, 210, 192, 0.08)
+                );
+                border-radius: 12px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 22px;
+                margin-bottom: 20px;
+            }
+            .value-card h3 {
+                font-size: 1.15rem;
+                font-weight: 700;
+                color: var(--navy);
+                margin-bottom: 12px;
+                line-height: 1.3;
+            }
+            .value-card p {
+                font-size: 14px;
+                color: var(--mid);
+                line-height: 1.7;
+            }
+            .value-card-link {
+                display: inline-flex;
+                align-items: center;
+                gap: 6px;
+                margin-top: 20px;
+                font-size: 13px;
+                font-weight: 600;
+                color: var(--teal);
+                text-decoration: none;
+                transition: gap 0.2s;
+            }
+            .value-card-link:hover {
+                gap: 10px;
+            }
 
-    /* ── SERVICES PAGE ── */
-    .service-block {
-      display: grid; grid-template-columns: 1fr 1fr;
-      gap: 60px; align-items: center;
-      padding: 60px 0; border-bottom: 1px solid var(--border);
-    }
-    .service-block:last-of-type { border-bottom: none; }
-    .service-block.reverse { direction: rtl; }
-    .service-block.reverse > * { direction: ltr; }
-    .service-visual {
-      background: linear-gradient(135deg, var(--navy), #122840);
-      border-radius: 16px; padding: 50px 40px;
-      min-height: 360px;
-      display: flex; flex-direction: column; justify-content: space-between;
-      position: relative; overflow: hidden;
-    }
-    .service-visual::before {
-      content: '';
-      position: absolute; top: -80px; right: -80px;
-      width: 280px; height: 280px;
-      background: radial-gradient(circle, rgba(10,138,122,0.2), transparent 70%);
-      border-radius: 50%;
-    }
-    .service-visual-icon { font-size: 42px; margin-bottom: 20px; position: relative; z-index:1;}
-    .service-visual-title {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.6rem; font-weight: 700; color: #fff;
-      line-height: 1.2; position: relative; z-index:1;
-    }
-    .service-visual-tag {
-      display: inline-block; margin-top: 18px;
-      background: rgba(10,138,122,0.25);
-      border: 1px solid rgba(10,138,122,0.5);
-      border-radius: 20px; padding: 5px 14px;
-      font-size: 11px; font-weight: 600; letter-spacing: 1px;
-      text-transform: uppercase; color: var(--accent);
-      position: relative; z-index:1;
-    }
-    .service-content {}
-    .service-content h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(1.6rem, 2.5vw, 2rem);
-      font-weight: 700; color: var(--navy); margin-bottom: 16px;
-    }
-    .service-content p {
-      font-size: 15px; color: #4A5568; line-height: 1.8; margin-bottom: 20px;
-    }
-    .service-bullets { list-style: none; display: flex; flex-direction: column; gap: 12px; }
-    .service-bullets li {
-      display: flex; gap: 12px; align-items: flex-start;
-      font-size: 14px; color: var(--mid); line-height: 1.6;
-    }
-    .service-bullets li::before {
-      content: '';
-      flex-shrink: 0;
-      width: 18px; height: 18px; margin-top: 2px;
-      background: linear-gradient(135deg, var(--teal), var(--accent));
-      border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 10px; color: #fff;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E");
-      background-size: 11px; background-repeat: no-repeat; background-position: center;
-    }
-    .service-outcome {
-      margin-top: 28px;
-      background: linear-gradient(135deg, rgba(10,138,122,0.06), rgba(5,210,192,0.04));
-      border: 1px solid rgba(10,138,122,0.18);
-      border-radius: 10px; padding: 18px 22px;
-    }
-    .service-outcome-label {
-      font-size: 10px; font-weight: 700; letter-spacing: 1.2px;
-      text-transform: uppercase; color: var(--teal); margin-bottom: 6px;
-    }
-    .service-outcome p { font-size: 13px; color: var(--text); margin-bottom: 0; line-height: 1.6; }
+            /* ── SERVICES PAGE ── */
+            .service-block {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 60px;
+                align-items: center;
+                padding: 60px 0;
+                border-bottom: 1px solid var(--border);
+            }
+            .service-block:last-of-type {
+                border-bottom: none;
+            }
+            .service-block.reverse {
+                direction: rtl;
+            }
+            .service-block.reverse > * {
+                direction: ltr;
+            }
+            .service-visual {
+                background: linear-gradient(135deg, var(--navy), #122840);
+                border-radius: 16px;
+                padding: 50px 40px;
+                min-height: 360px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                position: relative;
+                overflow: hidden;
+            }
+            .service-visual::before {
+                content: "";
+                position: absolute;
+                top: -80px;
+                right: -80px;
+                width: 280px;
+                height: 280px;
+                background: radial-gradient(
+                    circle,
+                    rgba(10, 138, 122, 0.2),
+                    transparent 70%
+                );
+                border-radius: 50%;
+            }
+            .service-visual-icon {
+                font-size: 42px;
+                margin-bottom: 20px;
+                position: relative;
+                z-index: 1;
+            }
+            .service-visual-title {
+                font-family: "Playfair Display", serif;
+                font-size: 1.6rem;
+                font-weight: 700;
+                color: #fff;
+                line-height: 1.2;
+                position: relative;
+                z-index: 1;
+            }
+            .service-visual-tag {
+                display: inline-block;
+                margin-top: 18px;
+                background: rgba(10, 138, 122, 0.25);
+                border: 1px solid rgba(10, 138, 122, 0.5);
+                border-radius: 20px;
+                padding: 5px 14px;
+                font-size: 11px;
+                font-weight: 600;
+                letter-spacing: 1px;
+                text-transform: uppercase;
+                color: var(--accent);
+                position: relative;
+                z-index: 1;
+            }
+            .service-content {
+            }
+            .service-content h2 {
+                font-family: "Playfair Display", serif;
+                font-size: clamp(1.6rem, 2.5vw, 2rem);
+                font-weight: 700;
+                color: var(--navy);
+                margin-bottom: 16px;
+            }
+            .service-content p {
+                font-size: 15px;
+                color: #4a5568;
+                line-height: 1.8;
+                margin-bottom: 20px;
+            }
+            .service-bullets {
+                list-style: none;
+                display: flex;
+                flex-direction: column;
+                gap: 12px;
+            }
+            .service-bullets li {
+                display: flex;
+                gap: 12px;
+                align-items: flex-start;
+                font-size: 14px;
+                color: var(--mid);
+                line-height: 1.6;
+            }
+            .service-bullets li::before {
+                content: "";
+                flex-shrink: 0;
+                width: 18px;
+                height: 18px;
+                margin-top: 2px;
+                background: linear-gradient(135deg, var(--teal), var(--accent));
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 10px;
+                color: #fff;
+                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E");
+                background-size: 11px;
+                background-repeat: no-repeat;
+                background-position: center;
+            }
+            .service-outcome {
+                margin-top: 28px;
+                background: linear-gradient(
+                    135deg,
+                    rgba(10, 138, 122, 0.06),
+                    rgba(5, 210, 192, 0.04)
+                );
+                border: 1px solid rgba(10, 138, 122, 0.18);
+                border-radius: 10px;
+                padding: 18px 22px;
+            }
+            .service-outcome-label {
+                font-size: 10px;
+                font-weight: 700;
+                letter-spacing: 1.2px;
+                text-transform: uppercase;
+                color: var(--teal);
+                margin-bottom: 6px;
+            }
+            .service-outcome p {
+                font-size: 13px;
+                color: var(--text);
+                margin-bottom: 0;
+                line-height: 1.6;
+            }
 
-    /* ── WHY US PAGE ── */
-    .whyus-hero {
-      background: linear-gradient(160deg, var(--navy) 0%, #0D2840 100%);
-      padding: 80px 8% 70px;
-      text-align: center;
-    }
-    .whyus-hero .section-eyebrow { color: var(--accent); }
-    .whyus-hero .section-title { color: #fff; max-width: 700px; margin: 0 auto 16px; }
-    .whyus-hero .section-sub { color: rgba(255,255,255,0.65); margin: 0 auto 0; }
-    .whyus-hero .divider { margin: 0 auto 20px; }
+            /* ── WHY US PAGE ── */
+            .whyus-hero {
+                background: linear-gradient(
+                    160deg,
+                    var(--navy) 0%,
+                    #0d2840 100%
+                );
+                padding: 80px 8% 70px;
+                text-align: center;
+            }
+            .whyus-hero .section-eyebrow {
+                color: var(--accent);
+            }
+            .whyus-hero .section-title {
+                color: #fff;
+                max-width: 700px;
+                margin: 0 auto 16px;
+            }
+            .whyus-hero .section-sub {
+                color: rgba(255, 255, 255, 0.65);
+                margin: 0 auto 0;
+            }
+            .whyus-hero .divider {
+                margin: 0 auto 20px;
+            }
 
-    .differentiators {
-      display: grid; grid-template-columns: repeat(2,1fr); gap: 24px;
-    }
-    .diff-card {
-      border: 1px solid var(--border);
-      border-radius: 14px; padding: 34px 30px;
-      transition: border-color .25s, box-shadow .25s;
-    }
-    .diff-card:hover { border-color: var(--teal); box-shadow: 0 8px 32px rgba(10,138,122,0.1); }
-    .diff-icon {
-      width: 48px; height: 48px;
-      background: linear-gradient(135deg, rgba(10,138,122,0.1), rgba(5,210,192,0.06));
-      border-radius: 10px; font-size: 22px;
-      display: flex; align-items: center; justify-content: center;
-      margin-bottom: 18px;
-    }
-    .diff-card h3 { font-size: 1.05rem; font-weight: 700; color: var(--navy); margin-bottom: 10px; }
-    .diff-card p { font-size: 14px; color: var(--mid); line-height: 1.7; }
+            .differentiators {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 24px;
+            }
+            .diff-card {
+                border: 1px solid var(--border);
+                border-radius: 14px;
+                padding: 34px 30px;
+                transition:
+                    border-color 0.25s,
+                    box-shadow 0.25s;
+            }
+            .diff-card:hover {
+                border-color: var(--teal);
+                box-shadow: 0 8px 32px rgba(10, 138, 122, 0.1);
+            }
+            .diff-icon {
+                width: 48px;
+                height: 48px;
+                background: linear-gradient(
+                    135deg,
+                    rgba(10, 138, 122, 0.1),
+                    rgba(5, 210, 192, 0.06)
+                );
+                border-radius: 10px;
+                font-size: 22px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-bottom: 18px;
+            }
+            .diff-card h3 {
+                font-size: 1.05rem;
+                font-weight: 700;
+                color: var(--navy);
+                margin-bottom: 10px;
+            }
+            .diff-card p {
+                font-size: 14px;
+                color: var(--mid);
+                line-height: 1.7;
+            }
 
-    .approach-steps {
-      display: grid; grid-template-columns: repeat(4,1fr); gap: 0;
-      margin-top: 60px; position: relative;
-    }
-    .approach-steps::before {
-      content: '';
-      position: absolute; top: 40px; left: 12.5%; right: 12.5%; height: 1px;
-      background: linear-gradient(90deg, var(--teal), var(--accent));
-      z-index: 0;
-    }
-    .approach-step { text-align: center; padding: 0 20px; position: relative; z-index: 1; }
-    .step-circle {
-      width: 80px; height: 80px; border-radius: 50%;
-      background: var(--white); border: 2px solid var(--teal);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 26px; margin: 0 auto 20px;
-      box-shadow: 0 4px 20px rgba(10,138,122,0.15);
-    }
-    .step-num {
-      position: absolute; top: -6px; right: calc(50% - 52px);
-      width: 20px; height: 20px; border-radius: 50%;
-      background: var(--teal); color: #fff;
-      font-size: 10px; font-weight: 700;
-      display: flex; align-items: center; justify-content: center;
-    }
-    .approach-step h4 { font-size: 14px; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
-    .approach-step p { font-size: 13px; color: var(--mid); line-height: 1.6; }
+            .approach-steps {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                gap: 0;
+                margin-top: 60px;
+                position: relative;
+            }
+            .approach-steps::before {
+                content: "";
+                position: absolute;
+                top: 40px;
+                left: 12.5%;
+                right: 12.5%;
+                height: 1px;
+                background: linear-gradient(90deg, var(--teal), var(--accent));
+                z-index: 0;
+            }
+            .approach-step {
+                text-align: center;
+                padding: 0 20px;
+                position: relative;
+                z-index: 1;
+            }
+            .step-circle {
+                width: 80px;
+                height: 80px;
+                border-radius: 50%;
+                background: var(--white);
+                border: 2px solid var(--teal);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 26px;
+                margin: 0 auto 20px;
+                box-shadow: 0 4px 20px rgba(10, 138, 122, 0.15);
+            }
+            .step-num {
+                position: absolute;
+                top: -6px;
+                right: calc(50% - 52px);
+                width: 20px;
+                height: 20px;
+                border-radius: 50%;
+                background: var(--teal);
+                color: #fff;
+                font-size: 10px;
+                font-weight: 700;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .approach-step h4 {
+                font-size: 14px;
+                font-weight: 700;
+                color: var(--navy);
+                margin-bottom: 8px;
+            }
+            .approach-step p {
+                font-size: 13px;
+                color: var(--mid);
+                line-height: 1.6;
+            }
 
-    .testimonial-block {
-      background: var(--navy);
-      border-radius: 16px; padding: 50px 56px;
-      margin-top: 60px;
-      display: flex; gap: 40px; align-items: flex-start;
-    }
-    .quote-mark { font-size: 72px; line-height: 1; color: var(--teal); font-family: 'Playfair Display', serif; flex-shrink: 0; margin-top: -12px; }
-    .quote-text { font-size: 1.1rem; color: rgba(255,255,255,0.88); line-height: 1.8; font-style: italic; margin-bottom: 20px; }
-    .quote-author { font-size: 13px; font-weight: 600; color: var(--accent); }
-    .quote-role { font-size: 12px; color: rgba(255,255,255,0.45); margin-top: 3px; }
+            .testimonial-block {
+                background: var(--navy);
+                border-radius: 16px;
+                padding: 50px 56px;
+                margin-top: 60px;
+                display: flex;
+                gap: 40px;
+                align-items: flex-start;
+            }
+            .quote-mark {
+                font-size: 72px;
+                line-height: 1;
+                color: var(--teal);
+                font-family: "Playfair Display", serif;
+                flex-shrink: 0;
+                margin-top: -12px;
+            }
+            .quote-text {
+                font-size: 1.1rem;
+                color: rgba(255, 255, 255, 0.88);
+                line-height: 1.8;
+                font-style: italic;
+                margin-bottom: 20px;
+            }
+            .quote-author {
+                font-size: 13px;
+                font-weight: 600;
+                color: var(--accent);
+            }
+            .quote-role {
+                font-size: 12px;
+                color: rgba(255, 255, 255, 0.45);
+                margin-top: 3px;
+            }
 
-    /* ── CONTACT PAGE ── */
-    .contact-layout { display: grid; grid-template-columns: 1fr 1.2fr; gap: 60px; align-items: start; }
-    .contact-info h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(1.8rem, 3vw, 2.4rem);
-      font-weight: 700; color: var(--navy); margin-bottom: 16px;
-    }
-    .contact-info p { font-size: 15px; color: var(--mid); line-height: 1.75; margin-bottom: 36px; }
-    .contact-items { display: flex; flex-direction: column; gap: 24px; }
-    .contact-item { display: flex; gap: 16px; align-items: flex-start; }
-    .contact-item-icon {
-      width: 42px; height: 42px; border-radius: 10px; flex-shrink: 0;
-      background: linear-gradient(135deg, rgba(10,138,122,0.1), rgba(5,210,192,0.06));
-      display: flex; align-items: center; justify-content: center; font-size: 18px;
-    }
-    .contact-item-label { font-size: 11px; font-weight: 600; letter-spacing: 0.8px; text-transform: uppercase; color: var(--teal); margin-bottom: 4px; }
-    .contact-item-value { font-size: 14px; color: var(--text); font-weight: 500; }
+            /* ── CONTACT PAGE ── */
+            .contact-layout {
+                display: grid;
+                grid-template-columns: 1fr 1.2fr;
+                gap: 60px;
+                align-items: start;
+            }
+            .contact-info h2 {
+                font-family: "Playfair Display", serif;
+                font-size: clamp(1.8rem, 3vw, 2.4rem);
+                font-weight: 700;
+                color: var(--navy);
+                margin-bottom: 16px;
+            }
+            .contact-info p {
+                font-size: 15px;
+                color: var(--mid);
+                line-height: 1.75;
+                margin-bottom: 36px;
+            }
+            .contact-items {
+                display: flex;
+                flex-direction: column;
+                gap: 24px;
+            }
+            .contact-item {
+                display: flex;
+                gap: 16px;
+                align-items: flex-start;
+            }
+            .contact-item-icon {
+                width: 42px;
+                height: 42px;
+                border-radius: 10px;
+                flex-shrink: 0;
+                background: linear-gradient(
+                    135deg,
+                    rgba(10, 138, 122, 0.1),
+                    rgba(5, 210, 192, 0.06)
+                );
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 18px;
+            }
+            .contact-item-label {
+                font-size: 11px;
+                font-weight: 600;
+                letter-spacing: 0.8px;
+                text-transform: uppercase;
+                color: var(--teal);
+                margin-bottom: 4px;
+            }
+            .contact-item-value {
+                font-size: 14px;
+                color: var(--text);
+                font-weight: 500;
+            }
 
-    .contact-form {
-      background: var(--silver); border: 1px solid var(--border);
-      border-radius: 16px; padding: 44px 40px;
-    }
-    .contact-form h3 {
-      font-size: 1.1rem; font-weight: 700; color: var(--navy); margin-bottom: 28px;
-    }
-    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-    .form-group { display: flex; flex-direction: column; gap: 8px; margin-bottom: 20px; }
-    .form-group label { font-size: 12px; font-weight: 600; color: var(--text); letter-spacing: 0.3px; }
-    .form-group input, .form-group select, .form-group textarea {
-      padding: 12px 14px; border: 1px solid var(--border);
-      border-radius: 8px; font-family: 'Inter', sans-serif;
-      font-size: 14px; color: var(--text); background: var(--white);
-      transition: border-color .2s, box-shadow .2s; outline: none;
-    }
-    .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
-      border-color: var(--teal);
-      box-shadow: 0 0 0 3px rgba(10,138,122,0.1);
-    }
-    .form-group textarea { resize: vertical; min-height: 120px; }
-    .form-submit {
-      width: 100%; padding: 14px; background: var(--teal);
-      color: #fff; font-family: 'Inter', sans-serif;
-      font-size: 15px; font-weight: 600; border: none;
-      border-radius: 8px; cursor: pointer;
-      transition: background .2s, transform .15s, box-shadow .2s;
-      box-shadow: 0 4px 20px rgba(10,138,122,0.25);
-    }
-    .form-submit:hover { background: var(--teal-light); transform: translateY(-1px); box-shadow: 0 6px 24px rgba(10,138,122,0.35); }
+            .contact-form {
+                background: var(--silver);
+                border: 1px solid var(--border);
+                border-radius: 16px;
+                padding: 44px 40px;
+            }
+            .contact-form h3 {
+                font-size: 1.1rem;
+                font-weight: 700;
+                color: var(--navy);
+                margin-bottom: 28px;
+            }
+            .form-row {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 16px;
+            }
+            .form-group {
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+                margin-bottom: 20px;
+            }
+            .form-group label {
+                font-size: 12px;
+                font-weight: 600;
+                color: var(--text);
+                letter-spacing: 0.3px;
+            }
+            .form-group input,
+            .form-group select,
+            .form-group textarea {
+                padding: 12px 14px;
+                border: 1px solid var(--border);
+                border-radius: 8px;
+                font-family: "Inter", sans-serif;
+                font-size: 14px;
+                color: var(--text);
+                background: var(--white);
+                transition:
+                    border-color 0.2s,
+                    box-shadow 0.2s;
+                outline: none;
+            }
+            .form-group input:focus,
+            .form-group select:focus,
+            .form-group textarea:focus {
+                border-color: var(--teal);
+                box-shadow: 0 0 0 3px rgba(10, 138, 122, 0.1);
+            }
+            .form-group textarea {
+                resize: vertical;
+                min-height: 120px;
+            }
+            .form-submit {
+                width: 100%;
+                padding: 14px;
+                background: var(--teal);
+                color: #fff;
+                font-family: "Inter", sans-serif;
+                font-size: 15px;
+                font-weight: 600;
+                border: none;
+                border-radius: 8px;
+                cursor: pointer;
+                transition:
+                    background 0.2s,
+                    transform 0.15s,
+                    box-shadow 0.2s;
+                box-shadow: 0 4px 20px rgba(10, 138, 122, 0.25);
+            }
+            .form-submit:hover {
+                background: var(--teal-light);
+                transform: translateY(-1px);
+                box-shadow: 0 6px 24px rgba(10, 138, 122, 0.35);
+            }
 
-    .form-note { font-size: 12px; color: var(--mid); text-align: center; margin-top: 14px; }
-    .form-note a { color: var(--teal); text-decoration: none; }
+            .form-note {
+                font-size: 12px;
+                color: var(--mid);
+                text-align: center;
+                margin-top: 14px;
+            }
+            .form-note a {
+                color: var(--teal);
+                text-decoration: none;
+            }
 
-    /* ── FOOTER ── */
-    footer {
-      background: var(--navy); padding: 50px 8% 28px;
-    }
-    .footer-top {
-      display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 40px;
-      padding-bottom: 36px; border-bottom: 1px solid rgba(255,255,255,0.1);
-    }
-    .footer-brand p { font-size: 13px; color: rgba(255,255,255,0.45); margin-top: 16px; line-height: 1.7; max-width: 280px; }
-    .footer-col h4 { font-size: 12px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-bottom: 16px; }
-    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
-    .footer-col ul li a {
-      font-size: 13px; color: rgba(255,255,255,0.6);
-      text-decoration: none; transition: color .2s;
-    }
-    .footer-col ul li a:hover { color: var(--accent); }
-    .footer-bottom {
-      padding-top: 24px;
-      display: flex; align-items: center; justify-content: space-between;
-    }
-    .footer-bottom p { font-size: 12px; color: rgba(255,255,255,0.3); }
-    .footer-badges { display: flex; gap: 12px; }
-    .footer-badge {
-      font-size: 11px; color: rgba(255,255,255,0.35);
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: 4px; padding: 3px 8px;
-    }
+            /* ── FOOTER ── */
+            footer {
+                background: var(--navy);
+                padding: 50px 8% 28px;
+            }
+            .footer-top {
+                display: grid;
+                grid-template-columns: 1.5fr 1fr 1fr;
+                gap: 40px;
+                padding-bottom: 36px;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            }
+            .footer-brand p {
+                font-size: 13px;
+                color: rgba(255, 255, 255, 0.45);
+                margin-top: 16px;
+                line-height: 1.7;
+                max-width: 280px;
+            }
+            .footer-col h4 {
+                font-size: 12px;
+                font-weight: 700;
+                letter-spacing: 1px;
+                text-transform: uppercase;
+                color: rgba(255, 255, 255, 0.5);
+                margin-bottom: 16px;
+            }
+            .footer-col ul {
+                list-style: none;
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+            }
+            .footer-col ul li a {
+                font-size: 13px;
+                color: rgba(255, 255, 255, 0.6);
+                text-decoration: none;
+                transition: color 0.2s;
+            }
+            .footer-col ul li a:hover {
+                color: var(--accent);
+            }
+            .footer-bottom {
+                padding-top: 24px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+            .footer-bottom p {
+                font-size: 12px;
+                color: rgba(255, 255, 255, 0.3);
+            }
+            .footer-badges {
+                display: flex;
+                gap: 12px;
+            }
+            .footer-badge {
+                font-size: 11px;
+                color: rgba(255, 255, 255, 0.35);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                border-radius: 4px;
+                padding: 3px 8px;
+            }
 
-    /* ── RESPONSIVE ── */
-    @media (max-width: 900px) {
-      .hero-pillars { grid-template-columns: 1fr; }
-      .value-grid { grid-template-columns: 1fr; }
-      .service-block { grid-template-columns: 1fr; }
-      .service-block.reverse { direction: ltr; }
-      .differentiators { grid-template-columns: 1fr; }
-      .approach-steps { grid-template-columns: 1fr 1fr; }
-      .approach-steps::before { display: none; }
-      .contact-layout { grid-template-columns: 1fr; }
-      .form-row { grid-template-columns: 1fr; }
-      .footer-top { grid-template-columns: 1fr; }
-      .stats-band { grid-template-columns: 1fr 1fr; }
-      .testimonial-block { flex-direction: column; padding: 36px 30px; }
-    }
-    @media (max-width: 600px) {
-      nav { padding: 0 4%; }
-      .nav-links { display: none; }
-      section { padding: 60px 5%; }
-      .hero { padding: 60px 5% 60px; }
-      .approach-steps { grid-template-columns: 1fr; }
-      .stats-band { grid-template-columns: 1fr 1fr; padding: 36px 5%; }
-    }
+            /* ── RESPONSIVE ── */
+            @media (max-width: 900px) {
+                .hero-pillars {
+                    grid-template-columns: 1fr;
+                }
+                .value-grid {
+                    grid-template-columns: 1fr;
+                }
+                .service-block {
+                    grid-template-columns: 1fr;
+                }
+                .service-block.reverse {
+                    direction: ltr;
+                }
+                .differentiators {
+                    grid-template-columns: 1fr;
+                }
+                .approach-steps {
+                    grid-template-columns: 1fr 1fr;
+                }
+                .approach-steps::before {
+                    display: none;
+                }
+                .contact-layout {
+                    grid-template-columns: 1fr;
+                }
+                .form-row {
+                    grid-template-columns: 1fr;
+                }
+                .footer-top {
+                    grid-template-columns: 1fr;
+                }
+                .stats-band {
+                    grid-template-columns: 1fr 1fr;
+                }
+                .testimonial-block {
+                    flex-direction: column;
+                    padding: 36px 30px;
+                }
+            }
+            @media (max-width: 600px) {
+                nav {
+                    padding: 0 4%;
+                }
+                .nav-links {
+                    display: none;
+                }
+                section {
+                    padding: 60px 5%;
+                }
+                .hero {
+                    padding: 60px 5% 60px;
+                }
+                .approach-steps {
+                    grid-template-columns: 1fr;
+                }
+                .stats-band {
+                    grid-template-columns: 1fr 1fr;
+                    padding: 36px 5%;
+                }
+            }
 
-    /* ── UTILS ── */
-    .text-center { text-align: center; }
-    .mx-auto { margin-left: auto; margin-right: auto; }
-    .bg-silver { background: var(--silver); }
+            /* ── UTILS ── */
+            .text-center {
+                text-align: center;
+            }
+            .mx-auto {
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .bg-silver {
+                background: var(--silver);
+            }
 
-    /* Success animation */
-    .form-success {
-      display: none; text-align: center; padding: 40px 20px;
-    }
-    .form-success.show { display: block; }
-    .success-icon {
-      width: 64px; height: 64px; border-radius: 50%;
-      background: linear-gradient(135deg, var(--teal), var(--accent));
-      margin: 0 auto 20px;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 28px;
-    }
-    .form-success h3 { font-size: 1.3rem; color: var(--navy); margin-bottom: 10px; }
-    .form-success p { font-size: 14px; color: var(--mid); }
-  </style>
-</head>
-<body>
+            /* Success animation */
+            .form-success {
+                display: none;
+                text-align: center;
+                padding: 40px 20px;
+            }
+            .form-success.show {
+                display: block;
+            }
+            .success-icon {
+                width: 64px;
+                height: 64px;
+                border-radius: 50%;
+                background: linear-gradient(135deg, var(--teal), var(--accent));
+                margin: 0 auto 20px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 28px;
+            }
+            .form-success h3 {
+                font-size: 1.3rem;
+                color: var(--navy);
+                margin-bottom: 10px;
+            }
+            .form-success p {
+                font-size: 14px;
+                color: var(--mid);
+            }
+        </style>
+    </head>
+    <body>
+        <!-- ════════════════ NAV ════════════════ -->
+        <nav>
+            <a class="nav-logo" href="#" onclick="showPage('home')">
+                <div class="nav-logo-mark">TN</div>
+                <span class="nav-logo-text">TriNova <span>AI Labs</span></span>
+            </a>
+            <ul class="nav-links">
+                <li>
+                    <a
+                        href="#"
+                        onclick="showPage('home')"
+                        id="nav-home"
+                        class="active"
+                        >Home</a
+                    >
+                </li>
+                <li>
+                    <a href="#" onclick="showPage('services')" id="nav-services"
+                        >Services</a
+                    >
+                </li>
+                <li>
+                    <a href="#" onclick="showPage('whyus')" id="nav-whyus"
+                        >Why Us</a
+                    >
+                </li>
+                <li>
+                    <a href="#" onclick="showPage('contact')" id="nav-contact"
+                        >Contact</a
+                    >
+                </li>
+            </ul>
+            <a class="nav-cta" href="#" onclick="showPage('contact')"
+                >Book a Consultation</a
+            >
+        </nav>
 
-<!-- ════════════════ NAV ════════════════ -->
-<nav>
-  <a class="nav-logo" href="#" onclick="showPage('home')">
-    <div class="nav-logo-mark">TN</div>
-    <span class="nav-logo-text">TriNova <span>AI Labs</span></span>
-  </a>
-  <ul class="nav-links">
-    <li><a href="#" onclick="showPage('home')" id="nav-home" class="active">Home</a></li>
-    <li><a href="#" onclick="showPage('services')" id="nav-services">Services</a></li>
-    <li><a href="#" onclick="showPage('whyus')" id="nav-whyus">Why Us</a></li>
-    <li><a href="#" onclick="showPage('contact')" id="nav-contact">Contact</a></li>
-  </ul>
-  <a class="nav-cta" href="#" onclick="showPage('contact')">Book a Consultation</a>
-</nav>
+        <!-- ════════════════ PAGE: HOME ════════════════ -->
+        <div id="page-home" class="page active">
+            <!-- HERO -->
+            <section class="hero">
+                <div class="hero-inner">
+                    <div class="hero-eyebrow">
+                        AI-Powered Business Transformation
+                    </div>
+                    <h1>
+                        Strategic Intelligence.<br /><em>Transformative</em>
+                        Results.
+                    </h1>
+                    <p class="hero-sub">
+                        TriNova AI Labs is a next-generation consultancy at the
+                        intersection of artificial intelligence, operational
+                        technology, and strategic advisory — engineered to
+                        accelerate growth, unlock shareholder value, and
+                        future-proof your business model.
+                    </p>
+                    <div class="hero-actions">
+                        <a
+                            class="btn-primary"
+                            href="#"
+                            onclick="showPage('services')"
+                            >Explore Our Services</a
+                        >
+                        <a
+                            class="btn-ghost"
+                            href="#"
+                            onclick="showPage('contact')"
+                            >Request a Briefing →</a
+                        >
+                    </div>
+                    <div class="hero-pillars">
+                        <div class="hero-pill">
+                            <div class="hero-pill-icon">📈</div>
+                            <div class="hero-pill-title">
+                                Shareholder Value Enhancement
+                            </div>
+                            <div class="hero-pill-text">
+                                AI-driven strategy to maximise enterprise
+                                valuation and investor returns.
+                            </div>
+                        </div>
+                        <div class="hero-pill">
+                            <div class="hero-pill-icon">🤖</div>
+                            <div class="hero-pill-title">
+                                AI Product & Service Transformation
+                            </div>
+                            <div class="hero-pill-text">
+                                Embedding intelligence into your offerings to
+                                unlock new revenue streams.
+                            </div>
+                        </div>
+                        <div class="hero-pill">
+                            <div class="hero-pill-icon">⚡</div>
+                            <div class="hero-pill-title">
+                                Integrated Tech Improvements & Advisory
+                            </div>
+                            <div class="hero-pill-text">
+                                End-to-end operational, legal and financial
+                                guidance for rapid model design.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-<!-- ════════════════ PAGE: HOME ════════════════ -->
-<div id="page-home" class="page active">
-
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-inner">
-      <div class="hero-eyebrow">AI-Powered Business Transformation</div>
-      <h1>Strategic Intelligence.<br/><em>Transformative</em> Results.</h1>
-      <p class="hero-sub">
-        TriNova AI Labs is a next-generation consultancy at the intersection of artificial intelligence, operational technology, and strategic advisory — engineered to accelerate growth, unlock shareholder value, and future-proof your business model.
-      </p>
-      <div class="hero-actions">
-        <a class="btn-primary" href="#" onclick="showPage('services')">Explore Our Services</a>
-        <a class="btn-ghost" href="#" onclick="showPage('contact')">Request a Briefing →</a>
-      </div>
-      <div class="hero-pillars">
-        <div class="hero-pill">
-          <div class="hero-pill-icon">📈</div>
-          <div class="hero-pill-title">Shareholder Value Enhancement</div>
-          <div class="hero-pill-text">AI-driven strategy to maximise enterprise valuation and investor returns.</div>
-        </div>
-        <div class="hero-pill">
-          <div class="hero-pill-icon">🤖</div>
-          <div class="hero-pill-title">AI Product & Service Transformation</div>
-          <div class="hero-pill-text">Embedding intelligence into your offerings to unlock new revenue streams.</div>
-        </div>
-        <div class="hero-pill">
-          <div class="hero-pill-icon">⚡</div>
-          <div class="hero-pill-title">Integrated Tech Improvements & Advisory</div>
-          <div class="hero-pill-text">End-to-end operational, legal and financial guidance for rapid model design.</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- STATS -->
-  <div class="stats-band">
-    <div class="stat">
-      <div class="stat-num">Faster</div>
-      <div class="stat-label">Time-to-Market</div>
-    </div>
-    <div class="stat">
-      <div class="stat-num">Higher</div>
-      <div class="stat-label">EBITDA Contribution</div>
-    </div>
-    <div class="stat">
-      <div class="stat-num">360°</div>
-      <div class="stat-label">Advisory Coverage</div>
-    </div>
-    <div class="stat">
-      <div class="stat-num">AI‑First</div>
-      <div class="stat-label">Methodology</div>
-    </div>
-  </div>
-
-  <!-- VALUE OVERVIEW -->
-  <section>
-    <div class="divider"></div>
-    <div class="section-eyebrow">What We Deliver</div>
-    <h2 class="section-title">Three Pillars of Transformative Value</h2>
-    <p class="section-sub">We combine deep AI expertise with C-suite strategic acumen to deliver measurable, lasting value across three critical dimensions of your business.</p>
-
-    <div class="value-grid">
-      <div class="value-card">
-        <div class="value-card-num">01 — Value Creation</div>
-        <div class="value-card-icon">📈</div>
-        <h3>Shareholder Value Enhancement</h3>
-        <p>We identify and activate hidden value drivers across your enterprise — from capital efficiency and growth levers to AI-enabled cost optimisation — delivering results that move the needle for investors and boards.</p>
-        <a class="value-card-link" href="#" onclick="showPage('services')">Learn more →</a>
-      </div>
-      <div class="value-card">
-        <div class="value-card-num">02 — Innovation</div>
-        <div class="value-card-icon">🤖</div>
-        <h3>AI-Enhanced Products & Services</h3>
-        <p>We redesign your product and service portfolio with embedded AI capabilities — from intelligent automation and predictive analytics to generative features — creating differentiated offerings that win in the market.</p>
-        <a class="value-card-link" href="#" onclick="showPage('services')">Learn more →</a>
-      </div>
-      <div class="value-card">
-        <div class="value-card-num">03 — Acceleration</div>
-        <div class="value-card-icon">⚡</div>
-        <h3>Integrated Tech Improvements & Regulatory Advisory</h3>
-        <p>Instant-on access to our network of Tech Improvements specialists, legal counsel, and financial advisors removes the friction that slows transformation — letting you design and activate your ultimate business model at speed.</p>
-        <a class="value-card-link" href="#" onclick="showPage('services')">Learn more →</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- FEE MODEL BAND -->
-  <section style="background:var(--silver); padding:60px 8%;">
-    <div style="max-width:900px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:center;">
-      <div>
-        <div class="divider"></div>
-        <div class="section-eyebrow">Our Engagement Model</div>
-        <h2 class="section-title" style="margin-bottom:16px;">No Hourly Fees.<br/>We Invest Alongside You.</h2>
-        <p style="font-size:15px; color:#4A5568; line-height:1.8;">
-          TriNova AI Labs does not charge hourly or day-rate fees. Instead, we structure our engagements as <strong>joint venture partnerships</strong> — taking a stake in the value we help create. This model reflects our deep conviction that our work will deliver a lasting, compounding shareholder value enhancement effect.
-        </p>
-        <p style="font-size:15px; color:#4A5568; line-height:1.8; margin-top:14px;">
-          When we succeed, you succeed. That alignment is not just a principle — it is built into every engagement we take on.
-        </p>
-      </div>
-      <div style="background:var(--navy); border-radius:16px; padding:40px 36px;">
-        <div style="font-size:36px; margin-bottom:20px;">🤝</div>
-        <div style="font-size:12px; font-weight:700; letter-spacing:1.2px; text-transform:uppercase; color:var(--accent); margin-bottom:12px;">Why This Matters</div>
-        <ul style="list-style:none; display:flex; flex-direction:column; gap:14px;">
-          <li style="display:flex; gap:12px; font-size:14px; color:rgba(255,255,255,0.75); line-height:1.6;">
-            <span style="color:var(--accent); font-weight:700; flex-shrink:0;">→</span>
-            Our interests are fully aligned with yours from day one
-          </li>
-          <li style="display:flex; gap:12px; font-size:14px; color:rgba(255,255,255,0.75); line-height:1.6;">
-            <span style="color:var(--accent); font-weight:700; flex-shrink:0;">→</span>
-            No advisory fees that erode the value we are creating
-          </li>
-          <li style="display:flex; gap:12px; font-size:14px; color:rgba(255,255,255,0.75); line-height:1.6;">
-            <span style="color:var(--accent); font-weight:700; flex-shrink:0;">→</span>
-            We only engage where we are confident in the outcome
-          </li>
-          <li style="display:flex; gap:12px; font-size:14px; color:rgba(255,255,255,0.75); line-height:1.6;">
-            <span style="color:var(--accent); font-weight:700; flex-shrink:0;">→</span>
-            Shareholders benefit directly from our commitment
-          </li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA BAND -->
-  <section style="background:linear-gradient(135deg, var(--navy), #0D3350); text-align:center; padding:70px 8%;">
-    <div class="section-eyebrow" style="color:var(--accent);">Ready to Begin?</div>
-    <h2 class="section-title" style="color:#fff; margin:0 auto 16px;">Let's Build Your Competitive Advantage</h2>
-    <p class="section-sub" style="color:rgba(255,255,255,0.6); margin: 0 auto 36px;">A focused 60-minute briefing is all it takes to map the AI transformation opportunities specific to your business.</p>
-    <a class="btn-primary" href="#" onclick="showPage('contact')" style="font-size:16px; padding:16px 40px;">Schedule Your Briefing</a>
-  </section>
-
-  <!-- FOOTER -->
-  <footer>
-    <div class="footer-top">
-      <div class="footer-brand">
-        <div class="nav-logo" style="display:inline-flex;">
-          <div class="nav-logo-mark">TN</div>
-          <span class="nav-logo-text" style="color:#fff;">TriNova <span>AI Labs</span></span>
-        </div>
-        <p>Strategic intelligence and AI-powered transformation advisory for ambitious organisations ready to lead in the intelligence economy.</p>
-      </div>
-      <div class="footer-col">
-        <h4>Services</h4>
-        <ul>
-          <li><a href="#" onclick="showPage('services')">Shareholder Value</a></li>
-          <li><a href="#" onclick="showPage('services')">AI Transformation</a></li>
-          <li><a href="#" onclick="showPage('services')">Tech Improvements Advisory</a></li>
-          <li><a href="#" onclick="showPage('services')">Legal & Financial</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Company</h4>
-        <ul>
-          <li><a href="#" onclick="showPage('whyus')">Why TriNova</a></li>
-          <li><a href="#" onclick="showPage('whyus')">Our Approach</a></li>
-          <li><a href="#" onclick="showPage('contact')">Contact Us</a></li>
-          <li><a href="#" onclick="showPage('contact')">Book a Briefing</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>© 2026 TriNova AI Labs. All rights reserved.</p>
-      <div class="footer-badges">
-        <span class="footer-badge">ISO 27001</span>
-        <span class="footer-badge">AI Ethics Certified</span>
-      </div>
-    </div>
-  </footer>
-</div>
-
-<!-- ════════════════ PAGE: SERVICES ════════════════ -->
-<div id="page-services" class="page">
-  <section style="padding-top:100px; padding-bottom:50px;">
-    <div class="divider"></div>
-    <div class="section-eyebrow">Our Services</div>
-    <h1 class="section-title">Where Strategy Meets<br/>Artificial Intelligence</h1>
-    <p class="section-sub">Three interconnected service lines, engineered to deliver compounding value — from board-level strategy through to technical deployment and regulatory compliance.</p>
-  </section>
-
-  <section style="padding-top:0;">
-    <!-- Service 01 -->
-    <div class="service-block">
-      <div class="service-visual">
-        <div class="service-visual-icon">📈</div>
-        <div class="service-visual-title">Unlocking the Full Value of Your Enterprise</div>
-        <span class="service-visual-tag">Shareholder Value</span>
-      </div>
-      <div class="service-content">
-        <div class="divider"></div>
-        <div class="section-eyebrow">Service 01</div>
-        <h2>Shareholder Value Enhancement</h2>
-        <p>We partner with executive leadership and boards to identify, quantify and activate the value creation levers that AI makes newly accessible. Our approach combines rigorous financial modelling with strategic AI opportunity mapping to build a compelling, investable growth narrative.</p>
-        <ul class="service-bullets">
-          <li>AI-powered enterprise value diagnostics and benchmarking</li>
-          <li>Capital allocation optimisation using predictive models</li>
-          <li>Revenue growth engineering through intelligent market analysis</li>
-          <li>Cost structure transformation via automation and AI efficiency</li>
-          <li>Investor narrative and ESG value positioning</li>
-          <li>M&A target identification and synergy modelling with AI</li>
-        </ul>
-        <div class="service-outcome">
-          <div class="service-outcome-label">Measurable Outcome</div>
-          <p>Clients achieve meaningful, measurable improvements in EBITDA contribution within a defined engagement period, alongside a strengthened equity story for capital markets.</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Service 02 -->
-    <div class="service-block reverse">
-      <div class="service-visual" style="background: linear-gradient(135deg, #0A2A3A, #0D1B2A);">
-        <div class="service-visual-icon">🤖</div>
-        <div class="service-visual-title">Reimagining Products & Services in the Age of AI</div>
-        <span class="service-visual-tag">AI Transformation</span>
-      </div>
-      <div class="service-content">
-        <div class="divider"></div>
-        <div class="section-eyebrow">Service 02</div>
-        <h2>AI-Enhanced Product & Service Transformation</h2>
-        <p>We audit your existing portfolio and co-design the next generation of AI-powered offerings — embedding intelligence directly into products and workflows to create durable competitive differentiation and new monetisation pathways.</p>
-        <ul class="service-bullets">
-          <li>AI readiness audit across your full product and service stack</li>
-          <li>Generative AI feature design and integration roadmapping</li>
-          <li>Intelligent automation of customer-facing and back-office processes</li>
-          <li>Predictive analytics layers for proactive service delivery</li>
-          <li>Data strategy and AI governance frameworks</li>
-          <li>Rapid prototype-to-production deployment support</li>
-        </ul>
-        <div class="service-outcome">
-          <div class="service-outcome-label">Measurable Outcome</div>
-          <p>Portfolio companies see a significant acceleration in time-to-market for new AI-enhanced offerings, alongside a measurable lift in customer lifetime value and retention.</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Service 03 -->
-    <div class="service-block">
-      <div class="service-visual" style="background: linear-gradient(135deg, #051F2A, #0A2840);">
-        <div class="service-visual-icon">⚡</div>
-        <div class="service-visual-title">Instant-On Expertise Across Every Critical Dimension</div>
-        <span class="service-visual-tag">Integrated Advisory</span>
-      </div>
-      <div class="service-content">
-        <div class="divider"></div>
-        <div class="section-eyebrow">Service 03</div>
-        <h2>Integrated Tech Improvements, Legal & Financial Advisory</h2>
-        <p>Transformation stalls when specialist expertise isn't available at the moment it's needed. TriNova AI Labs provides instant access to our expert network spanning operational technology, ICT architecture, legal compliance and financial structuring — eliminating the bottlenecks that slow business model evolution.</p>
-        <ul class="service-bullets">
-          <li>Technology architecture review and modernisation strategy</li>
-          <li>AI regulatory compliance (EU AI Act, GDPR, sector-specific)</li>
-          <li>IP protection strategy for AI-generated assets and models</li>
-          <li>Financial structuring for AI-led transformation programmes</li>
-          <li>Vendor and technology partner evaluation</li>
-          <li>Business model design workshops with cross-functional experts</li>
-        </ul>
-        <div class="service-outcome">
-          <div class="service-outcome-label">Measurable Outcome</div>
-          <p>Clients significantly reduce decision-to-deployment cycles by eliminating the sequential hand-offs between strategy, legal, technical, and financial workstreams.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section style="background:var(--silver); text-align:center;">
-    <div class="divider" style="margin:0 auto 16px;"></div>
-    <div class="section-eyebrow">Next Step</div>
-    <h2 class="section-title" style="margin:0 auto 16px;">Not Sure Where to Start?</h2>
-    <p class="section-sub" style="margin:0 auto 36px;">Our complimentary Transformation Discovery Session maps your highest-priority opportunities across all three service lines.</p>
-    <a class="btn-primary" href="#" onclick="showPage('contact')" style="font-size:15px; padding:14px 36px;">Request a Discovery Session</a>
-  </section>
-
-  <footer>
-    <div class="footer-top">
-      <div class="footer-brand">
-        <div class="nav-logo" style="display:inline-flex;">
-          <div class="nav-logo-mark">TN</div>
-          <span class="nav-logo-text" style="color:#fff;">TriNova <span>AI Labs</span></span>
-        </div>
-        <p>Strategic intelligence and AI-powered transformation advisory for ambitious organisations ready to lead in the intelligence economy.</p>
-      </div>
-      <div class="footer-col">
-        <h4>Services</h4>
-        <ul>
-          <li><a href="#" onclick="showPage('services')">Shareholder Value</a></li>
-          <li><a href="#" onclick="showPage('services')">AI Transformation</a></li>
-          <li><a href="#" onclick="showPage('services')">Tech Improvements Advisory</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Company</h4>
-        <ul>
-          <li><a href="#" onclick="showPage('whyus')">Why TriNova</a></li>
-          <li><a href="#" onclick="showPage('contact')">Contact</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>© 2026 TriNova AI Labs. All rights reserved.</p>
-    </div>
-  </footer>
-</div>
-
-<!-- ════════════════ PAGE: WHY US ════════════════ -->
-<div id="page-whyus" class="page">
-
-  <div class="whyus-hero">
-    <div class="divider mx-auto"></div>
-    <div class="section-eyebrow">Why TriNova AI Labs</div>
-    <h1 class="section-title">A Different Kind of<br/>AI Consultancy</h1>
-    <p class="section-sub">We don't hand you a report and leave. We embed with your leadership team as strategic partners — combining AI-native expertise with business model rigour to deliver real, measurable transformation.</p>
-  </div>
-
-  <section>
-    <div class="divider"></div>
-    <div class="section-eyebrow">Our Differentiators</div>
-    <h2 class="section-title">What Sets Us Apart</h2>
-    <p class="section-sub">Six reasons why forward-thinking executives choose TriNova AI Labs over traditional consultancies and AI-only vendors.</p>
-
-    <div class="differentiators">
-      <div class="diff-card">
-        <div class="diff-icon">🧠</div>
-        <h3>AI-Native from the Ground Up</h3>
-        <p>Unlike legacy consultancies retrofitting AI into traditional frameworks, TriNova AI Labs was architected around AI-first thinking. Every recommendation is designed to leverage the full potential of modern AI — not apply it as an afterthought.</p>
-      </div>
-      <div class="diff-card">
-        <div class="diff-icon">⚡</div>
-        <h3>Instant-On Expert Network</h3>
-        <p>Our integrated team of Tech Improvements engineers, AI developers, legal specialists, and financial advisors is available on demand — eliminating the sequential delays that cost companies months of competitive advantage.</p>
-      </div>
-      <div class="diff-card">
-        <div class="diff-icon">🎯</div>
-        <h3>Joint Venture, Not Hourly Fees</h3>
-        <p>We do not charge hourly or day-rate fees. Our engagements are structured as joint venture partnerships — we take shares in the value we help create. This reflects our conviction that our work will have a direct shareholder value enhancement effect, and ensures our interests are fully aligned with yours.</p>
-      </div>
-      <div class="diff-card">
-        <div class="diff-icon">🔗</div>
-        <h3>End-to-End Coverage</h3>
-        <p>From board-level strategy to technical deployment, legal compliance and financial structuring — TriNova AI Labs provides seamless coverage across every dimension of transformation with no dangerous hand-off gaps.</p>
-      </div>
-      <div class="diff-card">
-        <div class="diff-icon">🌍</div>
-        <h3>Cross-Industry Pattern Recognition</h3>
-        <p>Our team has activated AI transformations across financial services, manufacturing, healthcare, logistics and professional services — giving us a pattern recognition advantage that sector-specific advisors simply cannot match.</p>
-      </div>
-      <div class="diff-card">
-        <div class="diff-icon">🛡️</div>
-        <h3>Responsible AI at the Core</h3>
-        <p>Every solution we design is built with AI governance, regulatory compliance, and ethical deployment baked in from day one — protecting your reputation and ensuring readiness for evolving regulation including the EU AI Act.</p>
-      </div>
-    </div>
-
-    <!-- Approach Steps -->
-    <div style="margin-top:80px;">
-      <div class="divider"></div>
-      <div class="section-eyebrow">Our Approach</div>
-      <h2 class="section-title">How We Work</h2>
-      <p class="section-sub" style="margin-bottom:0;">A structured four-phase methodology that takes you from discovery to measurable impact — at a pace that matches your ambition.</p>
-    </div>
-
-    <div class="approach-steps">
-      <div class="approach-step">
-        <div class="step-circle" style="position:relative;">
-          <span class="step-num">1</span>
-          🔍
-        </div>
-        <h4>Discover</h4>
-        <p>Deep-dive diagnostic across your business model, value chain, and AI maturity to identify the highest-leverage opportunities.</p>
-      </div>
-      <div class="approach-step">
-        <div class="step-circle" style="position:relative;">
-          <span class="step-num">2</span>
-          🗺️
-        </div>
-        <h4>Design</h4>
-        <p>Co-create your AI transformation roadmap with clear prioritisation, financial modelling, and technical feasibility validated in parallel.</p>
-      </div>
-      <div class="approach-step">
-        <div class="step-circle" style="position:relative;">
-          <span class="step-num">3</span>
-          🚀
-        </div>
-        <h4>Deploy</h4>
-        <p>Rapid prototyping and phased deployment with embedded change management — ensuring adoption, not just installation.</p>
-      </div>
-      <div class="approach-step">
-        <div class="step-circle" style="position:relative;">
-          <span class="step-num">4</span>
-          📊
-        </div>
-        <h4>Measure</h4>
-        <p>Continuous performance monitoring against agreed KPIs with iterative optimisation to sustain and compound value creation.</p>
-      </div>
-    </div>
-
-    <!-- Testimonial -->
-    <div class="testimonial-block">
-      <div class="quote-mark">"</div>
-      <div>
-        <p class="quote-text">TriNova AI Labs didn't just give us a strategy deck — they embedded a team that spanned AI architecture, regulatory counsel and capital markets advisory simultaneously. We achieved in six months what our previous consultancy told us would take two years.</p>
-        <p class="quote-author">Chief Transformation Officer</p>
-        <p class="quote-role">Chief Transformation Officer, Global Industrial Group</p>
-      </div>
-    </div>
-  </section>
-
-  <section style="background:var(--silver); text-align:center;">
-    <div class="divider" style="margin:0 auto 16px;"></div>
-    <div class="section-eyebrow">Start the Conversation</div>
-    <h2 class="section-title" style="margin:0 auto 16px;">Speak Directly with Our Leadership Team</h2>
-    <p class="section-sub" style="margin:0 auto 36px;">No sales process. No junior hand-offs. Your first conversation is with a senior partner who understands your industry and your challenge.</p>
-    <a class="btn-primary" href="#" onclick="showPage('contact')" style="font-size:15px; padding:14px 36px;">Connect with a Partner</a>
-  </section>
-
-  <footer>
-    <div class="footer-top">
-      <div class="footer-brand">
-        <div class="nav-logo" style="display:inline-flex;">
-          <div class="nav-logo-mark">TN</div>
-          <span class="nav-logo-text" style="color:#fff;">TriNova <span>AI Labs</span></span>
-        </div>
-        <p>Strategic intelligence and AI-powered transformation advisory for ambitious organisations ready to lead in the intelligence economy.</p>
-      </div>
-      <div class="footer-col">
-        <h4>Services</h4>
-        <ul>
-          <li><a href="#" onclick="showPage('services')">Shareholder Value</a></li>
-          <li><a href="#" onclick="showPage('services')">AI Transformation</a></li>
-          <li><a href="#" onclick="showPage('services')">Tech Improvements Advisory</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Company</h4>
-        <ul>
-          <li><a href="#" onclick="showPage('whyus')">Why TriNova</a></li>
-          <li><a href="#" onclick="showPage('contact')">Contact</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>© 2026 TriNova AI Labs. All rights reserved.</p>
-    </div>
-  </footer>
-</div>
-
-<!-- ════════════════ PAGE: CONTACT ════════════════ -->
-<div id="page-contact" class="page">
-  <section style="padding-top:100px;">
-    <div class="contact-layout">
-      <div class="contact-info">
-        <div class="divider"></div>
-        <div class="section-eyebrow">Get in Touch</div>
-        <h2>Let's Explore What's Possible for Your Business</h2>
-        <p>Whether you have a specific challenge in mind or simply want to understand how AI can accelerate your strategy, our partners are ready to engage. Every conversation is confidential and without obligation.</p>
-
-        <div class="contact-items">
-          <div class="contact-item">
-            <div class="contact-item-icon">✉️</div>
-            <div>
-              <div class="contact-item-label">Email</div>
-              <div class="contact-item-value">hello@trinova-ailabs.com</div>
+            <!-- STATS -->
+            <div class="stats-band">
+                <div class="stat">
+                    <div class="stat-num">Faster</div>
+                    <div class="stat-label">Time-to-Market</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-num">Higher</div>
+                    <div class="stat-label">EBITDA Contribution</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-num">360°</div>
+                    <div class="stat-label">Advisory Coverage</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-num">AI‑First</div>
+                    <div class="stat-label">Methodology</div>
+                </div>
             </div>
-          </div>
-          <div class="contact-item">
-            <div class="contact-item-icon">🌐</div>
-            <div>
-              <div class="contact-item-label">Headquarters</div>
-              <div class="contact-item-value">Global — Remote-First with Local Partners</div>
+
+            <!-- VALUE OVERVIEW -->
+            <section>
+                <div class="divider"></div>
+                <div class="section-eyebrow">What We Deliver</div>
+                <h2 class="section-title">
+                    Three Pillars of Transformative Value
+                </h2>
+                <p class="section-sub">
+                    We combine deep AI expertise with C-suite strategic acumen
+                    to deliver measurable, lasting value across three critical
+                    dimensions of your business.
+                </p>
+
+                <div class="value-grid">
+                    <div class="value-card">
+                        <div class="value-card-num">01 — Value Creation</div>
+                        <div class="value-card-icon">📈</div>
+                        <h3>Shareholder Value Enhancement</h3>
+                        <p>
+                            We identify and activate hidden value drivers across
+                            your enterprise — from capital efficiency and growth
+                            levers to AI-enabled cost optimisation — delivering
+                            results that move the needle for investors and
+                            boards.
+                        </p>
+                        <a
+                            class="value-card-link"
+                            href="#"
+                            onclick="showPage('services')"
+                            >Learn more →</a
+                        >
+                    </div>
+                    <div class="value-card">
+                        <div class="value-card-num">02 — Innovation</div>
+                        <div class="value-card-icon">🤖</div>
+                        <h3>AI-Enhanced Products & Services</h3>
+                        <p>
+                            We redesign your product and service portfolio with
+                            embedded AI capabilities — from intelligent
+                            automation and predictive analytics to generative
+                            features — creating differentiated offerings that
+                            win in the market.
+                        </p>
+                        <a
+                            class="value-card-link"
+                            href="#"
+                            onclick="showPage('services')"
+                            >Learn more →</a
+                        >
+                    </div>
+                    <div class="value-card">
+                        <div class="value-card-num">03 — Acceleration</div>
+                        <div class="value-card-icon">⚡</div>
+                        <h3>
+                            Integrated Tech Improvements & Regulatory Advisory
+                        </h3>
+                        <p>
+                            Instant-on access to our network of Tech
+                            Improvements specialists, legal counsel, and
+                            financial advisors removes the friction that slows
+                            transformation — letting you design and activate
+                            your ultimate business model at speed.
+                        </p>
+                        <a
+                            class="value-card-link"
+                            href="#"
+                            onclick="showPage('services')"
+                            >Learn more →</a
+                        >
+                    </div>
+                </div>
+            </section>
+
+            <!-- FEE MODEL BAND -->
+            <section style="background: var(--silver); padding: 60px 8%">
+                <div
+                    style="
+                        max-width: 900px;
+                        margin: 0 auto;
+                        display: grid;
+                        grid-template-columns: 1fr 1fr;
+                        gap: 48px;
+                        align-items: center;
+                    "
+                >
+                    <div>
+                        <div class="divider"></div>
+                        <div class="section-eyebrow">Our Engagement Model</div>
+                        <h2 class="section-title" style="margin-bottom: 16px">
+                            No Hourly Fees.<br />We Invest Alongside You.
+                        </h2>
+                        <p
+                            style="
+                                font-size: 15px;
+                                color: #4a5568;
+                                line-height: 1.8;
+                            "
+                        >
+                            TriNova AI Labs does not charge hourly or day-rate
+                            fees. Instead, we structure our engagements as
+                            <strong>joint venture partnerships</strong> — taking
+                            a stake in the value we help create. This model
+                            reflects our deep conviction that our work will
+                            deliver a lasting, compounding shareholder value
+                            enhancement effect.
+                        </p>
+                        <p
+                            style="
+                                font-size: 15px;
+                                color: #4a5568;
+                                line-height: 1.8;
+                                margin-top: 14px;
+                            "
+                        >
+                            When we succeed, you succeed. That alignment is not
+                            just a principle — it is built into every engagement
+                            we take on.
+                        </p>
+                    </div>
+                    <div
+                        style="
+                            background: var(--navy);
+                            border-radius: 16px;
+                            padding: 40px 36px;
+                        "
+                    >
+                        <div style="font-size: 36px; margin-bottom: 20px">
+                            🤝
+                        </div>
+                        <div
+                            style="
+                                font-size: 12px;
+                                font-weight: 700;
+                                letter-spacing: 1.2px;
+                                text-transform: uppercase;
+                                color: var(--accent);
+                                margin-bottom: 12px;
+                            "
+                        >
+                            Why This Matters
+                        </div>
+                        <ul
+                            style="
+                                list-style: none;
+                                display: flex;
+                                flex-direction: column;
+                                gap: 14px;
+                            "
+                        >
+                            <li
+                                style="
+                                    display: flex;
+                                    gap: 12px;
+                                    font-size: 14px;
+                                    color: rgba(255, 255, 255, 0.75);
+                                    line-height: 1.6;
+                                "
+                            >
+                                <span
+                                    style="
+                                        color: var(--accent);
+                                        font-weight: 700;
+                                        flex-shrink: 0;
+                                    "
+                                    >→</span
+                                >
+                                Our interests are fully aligned with yours from
+                                day one
+                            </li>
+                            <li
+                                style="
+                                    display: flex;
+                                    gap: 12px;
+                                    font-size: 14px;
+                                    color: rgba(255, 255, 255, 0.75);
+                                    line-height: 1.6;
+                                "
+                            >
+                                <span
+                                    style="
+                                        color: var(--accent);
+                                        font-weight: 700;
+                                        flex-shrink: 0;
+                                    "
+                                    >→</span
+                                >
+                                No advisory fees that erode the value we are
+                                creating
+                            </li>
+                            <li
+                                style="
+                                    display: flex;
+                                    gap: 12px;
+                                    font-size: 14px;
+                                    color: rgba(255, 255, 255, 0.75);
+                                    line-height: 1.6;
+                                "
+                            >
+                                <span
+                                    style="
+                                        color: var(--accent);
+                                        font-weight: 700;
+                                        flex-shrink: 0;
+                                    "
+                                    >→</span
+                                >
+                                We only engage where we are confident in the
+                                outcome
+                            </li>
+                            <li
+                                style="
+                                    display: flex;
+                                    gap: 12px;
+                                    font-size: 14px;
+                                    color: rgba(255, 255, 255, 0.75);
+                                    line-height: 1.6;
+                                "
+                            >
+                                <span
+                                    style="
+                                        color: var(--accent);
+                                        font-weight: 700;
+                                        flex-shrink: 0;
+                                    "
+                                    >→</span
+                                >
+                                Shareholders benefit directly from our
+                                commitment
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CTA BAND -->
+            <section
+                style="
+                    background: linear-gradient(135deg, var(--navy), #0d3350);
+                    text-align: center;
+                    padding: 70px 8%;
+                "
+            >
+                <div class="section-eyebrow" style="color: var(--accent)">
+                    Ready to Begin?
+                </div>
+                <h2
+                    class="section-title"
+                    style="color: #fff; margin: 0 auto 16px"
+                >
+                    Let's Build Your Competitive Advantage
+                </h2>
+                <p
+                    class="section-sub"
+                    style="color: rgba(255, 255, 255, 0.6); margin: 0 auto 36px"
+                >
+                    A focused 60-minute briefing is all it takes to map the AI
+                    transformation opportunities specific to your business.
+                </p>
+                <a
+                    class="btn-primary"
+                    href="#"
+                    onclick="showPage('contact')"
+                    style="font-size: 16px; padding: 16px 40px"
+                    >Schedule Your Briefing</a
+                >
+            </section>
+
+            <!-- FOOTER -->
+            <footer>
+                <div class="footer-top">
+                    <div class="footer-brand">
+                        <div class="nav-logo" style="display: inline-flex">
+                            <div class="nav-logo-mark">TN</div>
+                            <span class="nav-logo-text" style="color: #fff"
+                                >TriNova <span>AI Labs</span></span
+                            >
+                        </div>
+                        <p>
+                            Strategic intelligence and AI-powered transformation
+                            advisory for ambitious organisations ready to lead
+                            in the intelligence economy.
+                        </p>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Services</h4>
+                        <ul>
+                            <li>
+                                <a href="#" onclick="showPage('services')"
+                                    >Shareholder Value</a
+                                >
+                            </li>
+                            <li>
+                                <a href="#" onclick="showPage('services')"
+                                    >AI Transformation</a
+                                >
+                            </li>
+                            <li>
+                                <a href="#" onclick="showPage('services')"
+                                    >Tech Improvements Advisory</a
+                                >
+                            </li>
+                            <li>
+                                <a href="#" onclick="showPage('services')"
+                                    >Legal & Financial</a
+                                >
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Company</h4>
+                        <ul>
+                            <li>
+                                <a href="#" onclick="showPage('whyus')"
+                                    >Why TriNova</a
+                                >
+                            </li>
+                            <li>
+                                <a href="#" onclick="showPage('whyus')"
+                                    >Our Approach</a
+                                >
+                            </li>
+                            <li>
+                                <a href="#" onclick="showPage('contact')"
+                                    >Contact Us</a
+                                >
+                            </li>
+                            <li>
+                                <a href="#" onclick="showPage('contact')"
+                                    >Book a Briefing</a
+                                >
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>© 2026 TriNova AI Labs. All rights reserved.</p>
+                    <div class="footer-badges">
+                        <span class="footer-badge">ISO 27001</span>
+                        <span class="footer-badge">AI Ethics Certified</span>
+                    </div>
+                </div>
+            </footer>
+        </div>
+
+        <!-- ════════════════ PAGE: SERVICES ════════════════ -->
+        <div id="page-services" class="page">
+            <section style="padding-top: 100px; padding-bottom: 50px">
+                <div class="divider"></div>
+                <div class="section-eyebrow">Our Services</div>
+                <h1 class="section-title">
+                    Where Strategy Meets<br />Artificial Intelligence
+                </h1>
+                <p class="section-sub">
+                    Three interconnected service lines, engineered to deliver
+                    compounding value — from board-level strategy through to
+                    technical deployment and regulatory compliance.
+                </p>
+            </section>
+
+            <section style="padding-top: 0">
+                <!-- Service 01 -->
+                <div class="service-block">
+                    <div class="service-visual">
+                        <div class="service-visual-icon">📈</div>
+                        <div class="service-visual-title">
+                            Unlocking the Full Value of Your Enterprise
+                        </div>
+                        <span class="service-visual-tag"
+                            >Shareholder Value</span
+                        >
+                    </div>
+                    <div class="service-content">
+                        <div class="divider"></div>
+                        <div class="section-eyebrow">Service 01</div>
+                        <h2>Shareholder Value Enhancement</h2>
+                        <p>
+                            We partner with executive leadership and boards to
+                            identify, quantify and activate the value creation
+                            levers that AI makes newly accessible. Our approach
+                            combines rigorous financial modelling with strategic
+                            AI opportunity mapping to build a compelling,
+                            investable growth narrative.
+                        </p>
+                        <ul class="service-bullets">
+                            <li>
+                                AI-powered enterprise value diagnostics and
+                                benchmarking
+                            </li>
+                            <li>
+                                Capital allocation optimisation using predictive
+                                models
+                            </li>
+                            <li>
+                                Revenue growth engineering through intelligent
+                                market analysis
+                            </li>
+                            <li>
+                                Cost structure transformation via automation and
+                                AI efficiency
+                            </li>
+                            <li>
+                                Investor narrative and ESG value positioning
+                            </li>
+                            <li>
+                                M&A target identification and synergy modelling
+                                with AI
+                            </li>
+                        </ul>
+                        <div class="service-outcome">
+                            <div class="service-outcome-label">
+                                Measurable Outcome
+                            </div>
+                            <p>
+                                Clients achieve meaningful, measurable
+                                improvements in EBITDA contribution within a
+                                defined engagement period, alongside a
+                                strengthened equity story for capital markets.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 02 -->
+                <div class="service-block reverse">
+                    <div
+                        class="service-visual"
+                        style="
+                            background: linear-gradient(
+                                135deg,
+                                #0a2a3a,
+                                #0d1b2a
+                            );
+                        "
+                    >
+                        <div class="service-visual-icon">🤖</div>
+                        <div class="service-visual-title">
+                            Reimagining Products & Services in the Age of AI
+                        </div>
+                        <span class="service-visual-tag"
+                            >AI Transformation</span
+                        >
+                    </div>
+                    <div class="service-content">
+                        <div class="divider"></div>
+                        <div class="section-eyebrow">Service 02</div>
+                        <h2>AI-Enhanced Product & Service Transformation</h2>
+                        <p>
+                            We audit your existing portfolio and co-design the
+                            next generation of AI-powered offerings — embedding
+                            intelligence directly into products and workflows to
+                            create durable competitive differentiation and new
+                            monetisation pathways.
+                        </p>
+                        <ul class="service-bullets">
+                            <li>
+                                AI readiness audit across your full product and
+                                service stack
+                            </li>
+                            <li>
+                                Generative AI feature design and integration
+                                roadmapping
+                            </li>
+                            <li>
+                                Intelligent automation of customer-facing and
+                                back-office processes
+                            </li>
+                            <li>
+                                Predictive analytics layers for proactive
+                                service delivery
+                            </li>
+                            <li>Data strategy and AI governance frameworks</li>
+                            <li>
+                                Rapid prototype-to-production deployment support
+                            </li>
+                        </ul>
+                        <div class="service-outcome">
+                            <div class="service-outcome-label">
+                                Measurable Outcome
+                            </div>
+                            <p>
+                                Portfolio companies see a significant
+                                acceleration in time-to-market for new
+                                AI-enhanced offerings, alongside a measurable
+                                lift in customer lifetime value and retention.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 03 -->
+                <div class="service-block">
+                    <div
+                        class="service-visual"
+                        style="
+                            background: linear-gradient(
+                                135deg,
+                                #051f2a,
+                                #0a2840
+                            );
+                        "
+                    >
+                        <div class="service-visual-icon">⚡</div>
+                        <div class="service-visual-title">
+                            Instant-On Expertise Across Every Critical Dimension
+                        </div>
+                        <span class="service-visual-tag"
+                            >Integrated Advisory</span
+                        >
+                    </div>
+                    <div class="service-content">
+                        <div class="divider"></div>
+                        <div class="section-eyebrow">Service 03</div>
+                        <h2>
+                            Integrated Tech Improvements, Legal & Financial
+                            Advisory
+                        </h2>
+                        <p>
+                            Transformation stalls when specialist expertise
+                            isn't available at the moment it's needed. TriNova
+                            AI Labs provides instant access to our expert
+                            network spanning operational technology, ICT
+                            architecture, legal compliance and financial
+                            structuring — eliminating the bottlenecks that slow
+                            business model evolution.
+                        </p>
+                        <ul class="service-bullets">
+                            <li>
+                                Technology architecture review and modernisation
+                                strategy
+                            </li>
+                            <li>
+                                AI regulatory compliance (EU AI Act, GDPR,
+                                sector-specific)
+                            </li>
+                            <li>
+                                IP protection strategy for AI-generated assets
+                                and models
+                            </li>
+                            <li>
+                                Financial structuring for AI-led transformation
+                                programmes
+                            </li>
+                            <li>Vendor and technology partner evaluation</li>
+                            <li>
+                                Business model design workshops with
+                                cross-functional experts
+                            </li>
+                        </ul>
+                        <div class="service-outcome">
+                            <div class="service-outcome-label">
+                                Measurable Outcome
+                            </div>
+                            <p>
+                                Clients significantly reduce
+                                decision-to-deployment cycles by eliminating the
+                                sequential hand-offs between strategy, legal,
+                                technical, and financial workstreams.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section style="background: var(--silver); text-align: center">
+                <div class="divider" style="margin: 0 auto 16px"></div>
+                <div class="section-eyebrow">Next Step</div>
+                <h2 class="section-title" style="margin: 0 auto 16px">
+                    Not Sure Where to Start?
+                </h2>
+                <p class="section-sub" style="margin: 0 auto 36px">
+                    Our complimentary Transformation Discovery Session maps your
+                    highest-priority opportunities across all three service
+                    lines.
+                </p>
+                <a
+                    class="btn-primary"
+                    href="#"
+                    onclick="showPage('contact')"
+                    style="font-size: 15px; padding: 14px 36px"
+                    >Request a Discovery Session</a
+                >
+            </section>
+
+            <footer>
+                <div class="footer-top">
+                    <div class="footer-brand">
+                        <div class="nav-logo" style="display: inline-flex">
+                            <div class="nav-logo-mark">TN</div>
+                            <span class="nav-logo-text" style="color: #fff"
+                                >TriNova <span>AI Labs</span></span
+                            >
+                        </div>
+                        <p>
+                            Strategic intelligence and AI-powered transformation
+                            advisory for ambitious organisations ready to lead
+                            in the intelligence economy.
+                        </p>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Services</h4>
+                        <ul>
+                            <li>
+                                <a href="#" onclick="showPage('services')"
+                                    >Shareholder Value</a
+                                >
+                            </li>
+                            <li>
+                                <a href="#" onclick="showPage('services')"
+                                    >AI Transformation</a
+                                >
+                            </li>
+                            <li>
+                                <a href="#" onclick="showPage('services')"
+                                    >Tech Improvements Advisory</a
+                                >
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Company</h4>
+                        <ul>
+                            <li>
+                                <a href="#" onclick="showPage('whyus')"
+                                    >Why TriNova</a
+                                >
+                            </li>
+                            <li>
+                                <a href="#" onclick="showPage('contact')"
+                                    >Contact</a
+                                >
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>© 2026 TriNova AI Labs. All rights reserved.</p>
+                </div>
+            </footer>
+        </div>
+
+        <!-- ════════════════ PAGE: WHY US ════════════════ -->
+        <div id="page-whyus" class="page">
+            <div class="whyus-hero">
+                <div class="divider mx-auto"></div>
+                <div class="section-eyebrow">Why TriNova AI Labs</div>
+                <h1 class="section-title">
+                    A Different Kind of<br />AI Consultancy
+                </h1>
+                <p class="section-sub">
+                    We don't hand you a report and leave. We embed with your
+                    leadership team as strategic partners — combining AI-native
+                    expertise with business model rigour to deliver real,
+                    measurable transformation.
+                </p>
             </div>
-          </div>
-          <div class="contact-item">
-            <div class="contact-item-icon">🕐</div>
-            <div>
-              <div class="contact-item-label">Response Time</div>
-              <div class="contact-item-value">Within 24 business hours</div>
-            </div>
-          </div>
-          <div class="contact-item">
-            <div class="contact-item-icon">🔒</div>
-            <div>
-              <div class="contact-item-label">Confidentiality</div>
-              <div class="contact-item-value">All enquiries handled under NDA on request</div>
-            </div>
-          </div>
-        </div>
-      </div>
 
-      <div class="contact-form" id="contact-form-wrapper">
-        <h3>Request a Consultation</h3>
-        <div class="form-row">
-          <div class="form-group">
-            <label>First Name</label>
-            <input type="text" placeholder="Peter"/>
-          </div>
-          <div class="form-group">
-            <label>Last Name</label>
-            <input type="text" placeholder="Smith"/>
-          </div>
-        </div>
-        <div class="form-group">
-          <label>Business Email</label>
-          <input type="email" placeholder="you@company.com"/>
-        </div>
-        <div class="form-group">
-          <label>Company & Role</label>
-          <input type="text" placeholder="e.g. Acme Corp — Chief Strategy Officer"/>
-        </div>
-        <div class="form-group">
-          <label>Primary Area of Interest</label>
-          <select>
-            <option value="">Select a service area…</option>
-            <option>Shareholder Value Enhancement</option>
-            <option>AI-Enhanced Products & Services</option>
-            <option>Tech Improvements & Regulatory Advisory</option>
-            <option>Full Transformation Programme</option>
-            <option>General Enquiry</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label>Tell us about your challenge or goal</label>
-          <textarea placeholder="Briefly describe your current situation and what you're looking to achieve…"></textarea>
-        </div>
-        <button class="form-submit" onclick="submitForm()">Send Enquiry →</button>
-        <p class="form-note">By submitting, you agree to our <a href="#">Privacy Policy</a>. We will never share your details.</p>
+            <section>
+                <div class="divider"></div>
+                <div class="section-eyebrow">Our Differentiators</div>
+                <h2 class="section-title">What Sets Us Apart</h2>
+                <p class="section-sub">
+                    Six reasons why forward-thinking executives choose TriNova
+                    AI Labs over traditional consultancies and AI-only vendors.
+                </p>
 
-        <div class="form-success" id="form-success">
-          <div class="success-icon">✓</div>
-          <h3>Thank You — We'll Be in Touch</h3>
-          <p>A senior partner will reach out within 24 business hours. We look forward to exploring the possibilities with you.</p>
+                <div class="differentiators">
+                    <div class="diff-card">
+                        <div class="diff-icon">🧠</div>
+                        <h3>AI-Native from the Ground Up</h3>
+                        <p>
+                            Unlike legacy consultancies retrofitting AI into
+                            traditional frameworks, TriNova AI Labs was
+                            architected around AI-first thinking. Every
+                            recommendation is designed to leverage the full
+                            potential of modern AI — not apply it as an
+                            afterthought.
+                        </p>
+                    </div>
+                    <div class="diff-card">
+                        <div class="diff-icon">⚡</div>
+                        <h3>Instant-On Expert Network</h3>
+                        <p>
+                            Our integrated team of Tech Improvements engineers,
+                            AI developers, legal specialists, and financial
+                            advisors is available on demand — eliminating the
+                            sequential delays that cost companies months of
+                            competitive advantage.
+                        </p>
+                    </div>
+                    <div class="diff-card">
+                        <div class="diff-icon">🎯</div>
+                        <h3>Joint Venture, Not Hourly Fees</h3>
+                        <p>
+                            We do not charge hourly or day-rate fees. Our
+                            engagements are structured as joint venture
+                            partnerships — we take shares in the value we help
+                            create. This reflects our conviction that our work
+                            will have a direct shareholder value enhancement
+                            effect, and ensures our interests are fully aligned
+                            with yours.
+                        </p>
+                    </div>
+                    <div class="diff-card">
+                        <div class="diff-icon">🔗</div>
+                        <h3>End-to-End Coverage</h3>
+                        <p>
+                            From board-level strategy to technical deployment,
+                            legal compliance and financial structuring — TriNova
+                            AI Labs provides seamless coverage across every
+                            dimension of transformation with no dangerous
+                            hand-off gaps.
+                        </p>
+                    </div>
+                    <div class="diff-card">
+                        <div class="diff-icon">🌍</div>
+                        <h3>Cross-Industry Pattern Recognition</h3>
+                        <p>
+                            Our team has activated AI transformations across
+                            financial services, manufacturing, healthcare,
+                            logistics and professional services — giving us a
+                            pattern recognition advantage that sector-specific
+                            advisors simply cannot match.
+                        </p>
+                    </div>
+                    <div class="diff-card">
+                        <div class="diff-icon">🛡️</div>
+                        <h3>Responsible AI at the Core</h3>
+                        <p>
+                            Every solution we design is built with AI
+                            governance, regulatory compliance, and ethical
+                            deployment baked in from day one — protecting your
+                            reputation and ensuring readiness for evolving
+                            regulation including the EU AI Act.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Approach Steps -->
+                <div style="margin-top: 80px">
+                    <div class="divider"></div>
+                    <div class="section-eyebrow">Our Approach</div>
+                    <h2 class="section-title">How We Work</h2>
+                    <p class="section-sub" style="margin-bottom: 0">
+                        A structured four-phase methodology that takes you from
+                        discovery to measurable impact — at a pace that matches
+                        your ambition.
+                    </p>
+                </div>
+
+                <div class="approach-steps">
+                    <div class="approach-step">
+                        <div class="step-circle" style="position: relative">
+                            <span class="step-num">1</span>
+                            🔍
+                        </div>
+                        <h4>Discover</h4>
+                        <p>
+                            Deep-dive diagnostic across your business model,
+                            value chain, and AI maturity to identify the
+                            highest-leverage opportunities.
+                        </p>
+                    </div>
+                    <div class="approach-step">
+                        <div class="step-circle" style="position: relative">
+                            <span class="step-num">2</span>
+                            🗺️
+                        </div>
+                        <h4>Design</h4>
+                        <p>
+                            Co-create your AI transformation roadmap with clear
+                            prioritisation, financial modelling, and technical
+                            feasibility validated in parallel.
+                        </p>
+                    </div>
+                    <div class="approach-step">
+                        <div class="step-circle" style="position: relative">
+                            <span class="step-num">3</span>
+                            🚀
+                        </div>
+                        <h4>Deploy</h4>
+                        <p>
+                            Rapid prototyping and phased deployment with
+                            embedded change management — ensuring adoption, not
+                            just installation.
+                        </p>
+                    </div>
+                    <div class="approach-step">
+                        <div class="step-circle" style="position: relative">
+                            <span class="step-num">4</span>
+                            📊
+                        </div>
+                        <h4>Measure</h4>
+                        <p>
+                            Continuous performance monitoring against agreed
+                            KPIs with iterative optimisation to sustain and
+                            compound value creation.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Testimonial -->
+                <div class="testimonial-block">
+                    <div class="quote-mark">"</div>
+                    <div>
+                        <p class="quote-text">
+                            TriNova AI Labs didn't just give us a strategy deck
+                            — they embedded a team that spanned AI architecture,
+                            regulatory counsel and capital markets advisory
+                            simultaneously. We achieved in six months what our
+                            previous consultancy told us would take two years.
+                        </p>
+                        <p class="quote-author">Chief Transformation Officer</p>
+                        <p class="quote-role">
+                            Chief Transformation Officer, Global Industrial
+                            Group
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <section style="background: var(--silver); text-align: center">
+                <div class="divider" style="margin: 0 auto 16px"></div>
+                <div class="section-eyebrow">Start the Conversation</div>
+                <h2 class="section-title" style="margin: 0 auto 16px">
+                    Speak Directly with Our Leadership Team
+                </h2>
+                <p class="section-sub" style="margin: 0 auto 36px">
+                    No sales process. No junior hand-offs. Your first
+                    conversation is with a senior partner who understands your
+                    industry and your challenge.
+                </p>
+                <a
+                    class="btn-primary"
+                    href="#"
+                    onclick="showPage('contact')"
+                    style="font-size: 15px; padding: 14px 36px"
+                    >Connect with a Partner</a
+                >
+            </section>
+
+            <footer>
+                <div class="footer-top">
+                    <div class="footer-brand">
+                        <div class="nav-logo" style="display: inline-flex">
+                            <div class="nav-logo-mark">TN</div>
+                            <span class="nav-logo-text" style="color: #fff"
+                                >TriNova <span>AI Labs</span></span
+                            >
+                        </div>
+                        <p>
+                            Strategic intelligence and AI-powered transformation
+                            advisory for ambitious organisations ready to lead
+                            in the intelligence economy.
+                        </p>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Services</h4>
+                        <ul>
+                            <li>
+                                <a href="#" onclick="showPage('services')"
+                                    >Shareholder Value</a
+                                >
+                            </li>
+                            <li>
+                                <a href="#" onclick="showPage('services')"
+                                    >AI Transformation</a
+                                >
+                            </li>
+                            <li>
+                                <a href="#" onclick="showPage('services')"
+                                    >Tech Improvements Advisory</a
+                                >
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Company</h4>
+                        <ul>
+                            <li>
+                                <a href="#" onclick="showPage('whyus')"
+                                    >Why TriNova</a
+                                >
+                            </li>
+                            <li>
+                                <a href="#" onclick="showPage('contact')"
+                                    >Contact</a
+                                >
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>© 2026 TriNova AI Labs. All rights reserved.</p>
+                </div>
+            </footer>
         </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- Bottom guarantee strip -->
-  <section style="background:var(--silver); padding:50px 8%;">
-    <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:30px; text-align:center;">
-      <div>
-        <div style="font-size:28px; margin-bottom:10px;">🤝</div>
-        <div style="font-weight:700; color:var(--navy); margin-bottom:6px; font-size:15px;">Senior-Level Engagement</div>
-        <div style="font-size:13px; color:var(--mid);">You always speak directly with experienced partners — never junior analysts.</div>
-      </div>
-      <div>
-        <div style="font-size:28px; margin-bottom:10px;">🔒</div>
-        <div style="font-weight:700; color:var(--navy); margin-bottom:6px; font-size:15px;">Full Confidentiality</div>
-        <div style="font-size:13px; color:var(--mid);">All enquiries and engagements are conducted with strict NDAs available on request.</div>
-      </div>
-      <div>
-        <div style="font-size:28px; margin-bottom:10px;">⚡</div>
-        <div style="font-weight:700; color:var(--navy); margin-bottom:6px; font-size:15px;">No-Obligation First Call</div>
-        <div style="font-size:13px; color:var(--mid);">Your initial consultation is complimentary and carries zero commitment.</div>
-      </div>
-    </div>
-  </section>
+        <!-- ════════════════ PAGE: CONTACT ════════════════ -->
+        <div id="page-contact" class="page">
+            <section style="padding-top: 100px">
+                <div class="contact-layout">
+                    <div class="contact-info">
+                        <div class="divider"></div>
+                        <div class="section-eyebrow">Get in Touch</div>
+                        <h2>Let's Explore What's Possible for Your Business</h2>
+                        <p>
+                            Whether you have a specific challenge in mind or
+                            simply want to understand how AI can accelerate your
+                            strategy, our partners are ready to engage. Every
+                            conversation is confidential and without obligation.
+                        </p>
 
-  <footer>
-    <div class="footer-top">
-      <div class="footer-brand">
-        <div class="nav-logo" style="display:inline-flex;">
-          <div class="nav-logo-mark">TN</div>
-          <span class="nav-logo-text" style="color:#fff;">TriNova <span>AI Labs</span></span>
+                        <div class="contact-items">
+                            <div class="contact-item">
+                                <div class="contact-item-icon">✉️</div>
+                                <div>
+                                    <div class="contact-item-label">Email</div>
+                                    <div class="contact-item-value">
+                                        info@trinovalabs.ai
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="contact-item-icon">🌐</div>
+                                <div>
+                                    <div class="contact-item-label">
+                                        Headquarters
+                                    </div>
+                                    <div class="contact-item-value">
+                                        Global — Remote-First with Local
+                                        Partners
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="contact-item-icon">🕐</div>
+                                <div>
+                                    <div class="contact-item-label">
+                                        Response Time
+                                    </div>
+                                    <div class="contact-item-value">
+                                        Within 24 business hours
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="contact-item-icon">🔒</div>
+                                <div>
+                                    <div class="contact-item-label">
+                                        Confidentiality
+                                    </div>
+                                    <div class="contact-item-value">
+                                        All enquiries handled under NDA on
+                                        request
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-form" id="contact-form-wrapper">
+                        <h3>Request a Consultation</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>First Name</label>
+                                <input type="text" placeholder="Peter" />
+                            </div>
+                            <div class="form-group">
+                                <label>Last Name</label>
+                                <input type="text" placeholder="Smith" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Business Email</label>
+                            <input type="email" placeholder="you@company.com" />
+                        </div>
+                        <div class="form-group">
+                            <label>Company & Role</label>
+                            <input
+                                type="text"
+                                placeholder="e.g. Acme Corp — Chief Strategy Officer"
+                            />
+                        </div>
+                        <div class="form-group">
+                            <label>Primary Area of Interest</label>
+                            <select>
+                                <option value="">Select a service area…</option>
+                                <option>Shareholder Value Enhancement</option>
+                                <option>AI-Enhanced Products & Services</option>
+                                <option>
+                                    Tech Improvements & Regulatory Advisory
+                                </option>
+                                <option>Full Transformation Programme</option>
+                                <option>General Enquiry</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Tell us about your challenge or goal</label>
+                            <textarea
+                                placeholder="Briefly describe your current situation and what you're looking to achieve…"
+                            ></textarea>
+                        </div>
+                        <button class="form-submit" onclick="submitForm()">
+                            Send Enquiry →
+                        </button>
+                        <p class="form-note">
+                            By submitting, you agree to our
+                            <a href="#">Privacy Policy</a>. We will never share
+                            your details.
+                        </p>
+
+                        <div class="form-success" id="form-success">
+                            <div class="success-icon">✓</div>
+                            <h3>Thank You — We'll Be in Touch</h3>
+                            <p>
+                                A senior partner will reach out within 24
+                                business hours. We look forward to exploring the
+                                possibilities with you.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Bottom guarantee strip -->
+            <section style="background: var(--silver); padding: 50px 8%">
+                <div
+                    style="
+                        display: grid;
+                        grid-template-columns: repeat(3, 1fr);
+                        gap: 30px;
+                        text-align: center;
+                    "
+                >
+                    <div>
+                        <div style="font-size: 28px; margin-bottom: 10px">
+                            🤝
+                        </div>
+                        <div
+                            style="
+                                font-weight: 700;
+                                color: var(--navy);
+                                margin-bottom: 6px;
+                                font-size: 15px;
+                            "
+                        >
+                            Senior-Level Engagement
+                        </div>
+                        <div style="font-size: 13px; color: var(--mid)">
+                            You always speak directly with experienced partners
+                            — never junior analysts.
+                        </div>
+                    </div>
+                    <div>
+                        <div style="font-size: 28px; margin-bottom: 10px">
+                            🔒
+                        </div>
+                        <div
+                            style="
+                                font-weight: 700;
+                                color: var(--navy);
+                                margin-bottom: 6px;
+                                font-size: 15px;
+                            "
+                        >
+                            Full Confidentiality
+                        </div>
+                        <div style="font-size: 13px; color: var(--mid)">
+                            All enquiries and engagements are conducted with
+                            strict NDAs available on request.
+                        </div>
+                    </div>
+                    <div>
+                        <div style="font-size: 28px; margin-bottom: 10px">
+                            ⚡
+                        </div>
+                        <div
+                            style="
+                                font-weight: 700;
+                                color: var(--navy);
+                                margin-bottom: 6px;
+                                font-size: 15px;
+                            "
+                        >
+                            No-Obligation First Call
+                        </div>
+                        <div style="font-size: 13px; color: var(--mid)">
+                            Your initial consultation is complimentary and
+                            carries zero commitment.
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <footer>
+                <div class="footer-top">
+                    <div class="footer-brand">
+                        <div class="nav-logo" style="display: inline-flex">
+                            <div class="nav-logo-mark">TN</div>
+                            <span class="nav-logo-text" style="color: #fff"
+                                >TriNova <span>AI Labs</span></span
+                            >
+                        </div>
+                        <p>
+                            Strategic intelligence and AI-powered transformation
+                            advisory for ambitious organisations ready to lead
+                            in the intelligence economy.
+                        </p>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Services</h4>
+                        <ul>
+                            <li>
+                                <a href="#" onclick="showPage('services')"
+                                    >Shareholder Value</a
+                                >
+                            </li>
+                            <li>
+                                <a href="#" onclick="showPage('services')"
+                                    >AI Transformation</a
+                                >
+                            </li>
+                            <li>
+                                <a href="#" onclick="showPage('services')"
+                                    >Tech Improvements Advisory</a
+                                >
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Company</h4>
+                        <ul>
+                            <li>
+                                <a href="#" onclick="showPage('whyus')"
+                                    >Why TriNova</a
+                                >
+                            </li>
+                            <li>
+                                <a href="#" onclick="showPage('contact')"
+                                    >Contact</a
+                                >
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>© 2026 TriNova AI Labs. All rights reserved.</p>
+                </div>
+            </footer>
         </div>
-        <p>Strategic intelligence and AI-powered transformation advisory for ambitious organisations ready to lead in the intelligence economy.</p>
-      </div>
-      <div class="footer-col">
-        <h4>Services</h4>
-        <ul>
-          <li><a href="#" onclick="showPage('services')">Shareholder Value</a></li>
-          <li><a href="#" onclick="showPage('services')">AI Transformation</a></li>
-          <li><a href="#" onclick="showPage('services')">Tech Improvements Advisory</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Company</h4>
-        <ul>
-          <li><a href="#" onclick="showPage('whyus')">Why TriNova</a></li>
-          <li><a href="#" onclick="showPage('contact')">Contact</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>© 2026 TriNova AI Labs. All rights reserved.</p>
-    </div>
-  </footer>
-</div>
 
-<!-- ════════════════ JS ════════════════ -->
-<script>
-  function showPage(name) {
-    // Hide all pages
-    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-    // Show target
-    document.getElementById('page-' + name).classList.add('active');
-    // Update nav links
-    document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
-    var navEl = document.getElementById('nav-' + name);
-    if (navEl) navEl.classList.add('active');
-    // Scroll to top
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-    return false;
-  }
+        <!-- ════════════════ JS ════════════════ -->
+        <script>
+            function showPage(name) {
+                // Hide all pages
+                document
+                    .querySelectorAll(".page")
+                    .forEach((p) => p.classList.remove("active"));
+                // Show target
+                document.getElementById("page-" + name).classList.add("active");
+                // Update nav links
+                document
+                    .querySelectorAll(".nav-links a")
+                    .forEach((a) => a.classList.remove("active"));
+                var navEl = document.getElementById("nav-" + name);
+                if (navEl) navEl.classList.add("active");
+                // Scroll to top
+                window.scrollTo({ top: 0, behavior: "smooth" });
+                return false;
+            }
 
-  function submitForm() {
-    var fields = document.querySelectorAll('#contact-form-wrapper input, #contact-form-wrapper select, #contact-form-wrapper textarea');
-    var hasValue = false;
-    fields.forEach(function(f) { if(f.value.trim()) hasValue = true; });
+            function submitForm() {
+                var fields = document.querySelectorAll(
+                    "#contact-form-wrapper input, #contact-form-wrapper select, #contact-form-wrapper textarea",
+                );
+                var hasValue = false;
+                fields.forEach(function (f) {
+                    if (f.value.trim()) hasValue = true;
+                });
 
-    // Hide form elements, show success
-    fields.forEach(function(f) { f.closest('.form-group') && (f.closest('.form-group').style.display='none'); });
-    document.querySelector('.form-row').style.display='none';
-    document.querySelector('.form-submit').style.display='none';
-    document.querySelector('.form-note').style.display='none';
-    document.querySelector('#contact-form-wrapper h3').style.display='none';
-    document.getElementById('form-success').classList.add('show');
-  }
-</script>
-</body>
+                // Hide form elements, show success
+                fields.forEach(function (f) {
+                    f.closest(".form-group") &&
+                        (f.closest(".form-group").style.display = "none");
+                });
+                document.querySelector(".form-row").style.display = "none";
+                document.querySelector(".form-submit").style.display = "none";
+                document.querySelector(".form-note").style.display = "none";
+                document.querySelector(
+                    "#contact-form-wrapper h3",
+                ).style.display = "none";
+                document.getElementById("form-success").classList.add("show");
+            }
+        </script>
+    </body>
 </html>
