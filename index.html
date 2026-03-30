@@ -2388,26 +2388,92 @@
             }
 
             function submitForm() {
-                var fields = document.querySelectorAll(
-                    "#contact-form-wrapper input, #contact-form-wrapper select, #contact-form-wrapper textarea",
-                );
-                var hasValue = false;
-                fields.forEach(function (f) {
-                    if (f.value.trim()) hasValue = true;
+                var wrapper = document.getElementById("contact-form-wrapper");
+                var btn = wrapper.querySelector(".form-submit");
+
+                // Gather values
+                var firstName = wrapper
+                    .querySelector("input[type=text]")
+                    .value.trim();
+                var lastName = wrapper
+                    .querySelectorAll("input[type=text]")[1]
+                    .value.trim();
+                var email = wrapper
+                    .querySelector("input[type=email]")
+                    .value.trim();
+                var company = wrapper
+                    .querySelectorAll("input[type=text]")[2]
+                    .value.trim();
+                var interest = wrapper.querySelector("select").value.trim();
+                var message = wrapper.querySelector("textarea").value.trim();
+
+                // Basic client-side validation
+                if (!firstName || !lastName || !email || !message) {
+                    alert(
+                        "Please fill in at least your name, email and message.",
+                    );
+                    return;
+                }
+
+                btn.disabled = true;
+                btn.textContent = "Sending…";
+
+                var body = new URLSearchParams({
+                    first_name: firstName,
+                    last_name: lastName,
+                    email: email,
+                    company: company,
+                    interest: interest,
+                    message: message,
                 });
 
-                // Hide form elements, show success
-                fields.forEach(function (f) {
-                    f.closest(".form-group") &&
-                        (f.closest(".form-group").style.display = "none");
-                });
-                document.querySelector(".form-row").style.display = "none";
-                document.querySelector(".form-submit").style.display = "none";
-                document.querySelector(".form-note").style.display = "none";
-                document.querySelector(
-                    "#contact-form-wrapper h3",
-                ).style.display = "none";
-                document.getElementById("form-success").classList.add("show");
+                fetch("contact.php", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/x-www-form-urlencoded",
+                    },
+                    body: body.toString(),
+                })
+                    .then(function (response) {
+                        return response.json().then(function (data) {
+                            return { ok: response.ok, data: data };
+                        });
+                    })
+                    .then(function (result) {
+                        if (result.ok && result.data.success) {
+                            // Hide form elements, show success message
+                            wrapper
+                                .querySelectorAll(".form-group")
+                                .forEach(function (g) {
+                                    g.style.display = "none";
+                                });
+                            wrapper.querySelector(".form-row").style.display =
+                                "none";
+                            wrapper.querySelector(
+                                ".form-submit",
+                            ).style.display = "none";
+                            wrapper.querySelector(".form-note").style.display =
+                                "none";
+                            wrapper.querySelector("h3").style.display = "none";
+                            document
+                                .getElementById("form-success")
+                                .classList.add("show");
+                        } else {
+                            alert(
+                                result.data.message ||
+                                    "Something went wrong. Please try again.",
+                            );
+                            btn.disabled = false;
+                            btn.textContent = "Send Enquiry →";
+                        }
+                    })
+                    .catch(function () {
+                        alert(
+                            "Could not reach the server. Please check your connection and try again.",
+                        );
+                        btn.disabled = false;
+                        btn.textContent = "Send Enquiry →";
+                    });
             }
         </script>
     </body>
